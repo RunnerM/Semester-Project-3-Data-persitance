@@ -1,4 +1,4 @@
-package model;
+package via.sep3.group7.newsdataapi.model;
 
 import java.util.ArrayList;
 
