@@ -23,25 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6cf9ee6-99eb-447b-a692-6f6c528d8e10" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data-persistence.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/via/sep3/group7/newsdataapi/NewsdataapiApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/via/sep3/group7/newsdataapi/controllers/NewsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/via/sep3/group7/newsdataapi/data/InMemoryNewsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/via/sep3/group7/newsdataapi/data/NewsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/via/sep3/group7/newsdataapi/model/DateAndTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/via/sep3/group7/newsdataapi/model/FriendsReference.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/via/sep3/group7/newsdataapi/model/News.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/via/sep3/group7/newsdataapi/model/NewsPost.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/via/sep3/group7/newsdataapi/model/PostData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/via/sep3/group7/newsdataapi/model/SubscriptionReference.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/via/sep3/group7/newsdataapi/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/java/via/sep3/group7/newsdataapi/NewsdataapiApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +46,10 @@
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserConversation.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/Conversation.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/DataAccess/FeedleDBContext.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Data/IDataBasePresistance.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Data/IDataBasePrecistance.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Data/IDataBasePersistance.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Data/IDataBasePersistence.cs" />
       </list>
     </option>
   </component>
@@ -118,7 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606925183841</updated>
-      <workItem from="1606925199574" duration="5615000" />
+      <workItem from="1606925199574" duration="7455000" />
     </task>
     <servers />
   </component>

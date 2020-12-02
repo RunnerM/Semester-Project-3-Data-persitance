@@ -11,6 +11,9 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include" />
+        <e p="Data" t="Include">
+          <e p="IDataBasePersistence.cs" t="Include" />
+        </e>
         <e p="DataAccess" t="Include">
           <e p="FeedleDBContext.cs" t="Include" />
         </e>
