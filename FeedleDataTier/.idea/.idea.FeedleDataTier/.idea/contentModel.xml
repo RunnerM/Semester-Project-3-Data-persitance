@@ -7,22 +7,16 @@
     <e p="C:\Users\Jenia\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
     <e p="C:\Users\Jenia\Documents\GitHub\Data-Persistence\FeedleDataTier" t="IncludeFlat">
       <e p="FeedleDataTier" t="IncludeRecursive">
-        <e p="appsettings.Development.json" t="Include" />
-        <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Controllers" t="Include" />
         <e p="Data" t="Include">
+          <e p="DataBasePersistence.cs" t="Include" />
           <e p="IDataBasePersistence.cs" t="Include" />
+          <e p="SocketConnection.cs" t="Include" />
         </e>
         <e p="DataAccess" t="Include">
           <e p="FeedleDBContext.cs" t="Include" />
         </e>
         <e p="FeedleDataTier.csproj" t="IncludeRecursive" />
-        <e p="Migrations" t="Include">
-          <e p="20201202173849_InitialCreate.cs" t="Include" />
-          <e p="20201202173849_InitialCreate.Designer.cs" t="Include" />
-          <e p="FeedleDBContextModelSnapshot.cs" t="Include" />
-        </e>
         <e p="Models" t="Include">
           <e p="Comment.cs" t="Include" />
           <e p="Conversation.cs" t="Include" />
@@ -39,10 +33,6 @@
           </e>
         </e>
         <e p="Program.cs" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="launchSettings.json" t="Include" />
-        </e>
-        <e p="Startup.cs" t="Include" />
       </e>
       <e p="FeedleDataTier.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
