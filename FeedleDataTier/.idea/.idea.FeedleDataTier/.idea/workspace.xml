@@ -23,44 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99ca3e0d-8e77-48e3-a9bd-283121164c9a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/AddPostRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/DeletePostRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/DeleteUserRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/GetPostsRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/GetPostsResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/GetUsersRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/GetUsersResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/PostUserRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/Request.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/UpdatePostRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/UpdateUserRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/Data/IDataBasePersistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Data/IDataBasePersistence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/DataAccess/FeedleDBContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/DataAccess/FeedleDBContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/FeedleDataTier.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/FeedleDataTier.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/Comment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/Conversation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/Conversation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/Message.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/Post.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/UserConversation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/UserConversation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Network/RequestType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Network/RequestType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/FeedleDataTier.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/FeedleDataTier.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +41,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/FeedleDataTier/Program.cs" />
-        <option value="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/Request.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/AddPostRequest.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/DeletePostRequest.cs" />
@@ -87,8 +53,6 @@
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/RequestType.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/UpdatePostRequest.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/UpdateUserRequest.cs" />
-        <option value="$PROJECT_DIR$/FeedleDataTier/Data/IDataBasePersistence.cs" />
-        <option value="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/Comment.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/Conversation.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/Message.cs" />
@@ -96,6 +60,9 @@
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/User.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserConversation.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/DataAccess/FeedleDBContext.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Data/IDataBasePersistence.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" />
       </list>
     </option>
   </component>
@@ -144,7 +111,7 @@
       <workItem from="1607090877797" duration="1689000" />
       <workItem from="1607178610204" duration="809000" />
       <workItem from="1607179441891" duration="1334000" />
-      <workItem from="1607260553234" duration="12741000" />
+      <workItem from="1607260553234" duration="19842000" />
     </task>
     <servers />
   </component>
@@ -192,5 +159,9 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="857" y="258" key="RiderGenerateDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1607280073323" />
+    <state x="681" y="259" key="run.anything.popup" timestamp="1607289485724">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="681" y="259" key="run.anything.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1607289485724" />
   </component>
 </project>

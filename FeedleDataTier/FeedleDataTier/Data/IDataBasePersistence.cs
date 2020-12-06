@@ -5,11 +5,15 @@ namespace FeedleDataTier.Data
 {
     public interface IDataBasePersistence
     {
-        User UpdateUser(User user);
-        Post UpdatePost(User user);
-        User AddUser(User user);
-        Post AddPost(Post post);
+        void UpdateUser(User user);
+        void UpdatePost(Post post);
+        void AddUser(User user);
+        void AddPost(Post post);
         List<Post> GetPosts();
+
+        void DeletePost(int postId);
+
+        void DeleteUser(int userId);
 
         List<User> GetUsers();
 

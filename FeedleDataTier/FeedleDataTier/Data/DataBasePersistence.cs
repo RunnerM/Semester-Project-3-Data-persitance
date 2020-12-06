@@ -1,8 +1,11 @@
-﻿﻿using System.Collections.Generic;
-using FeedleDataTier.DataAccess;
+﻿﻿using System;
+ using System.Collections.Generic;
+ using System.Linq;
+ using FeedleDataTier.DataAccess;
 using FeedleDataTier.Models;
+ using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace FeedleDataTier.Data
+ namespace FeedleDataTier.Data
 {
     public class DataBasePersistence : IDataBasePersistence
     {
@@ -13,34 +16,75 @@ namespace FeedleDataTier.Data
             this.DbContext = dbContext;
         }
 
-        public User UpdateUser(User user)
+        public void UpdateUser(User user)
         {
-            throw new System.NotImplementedException();
+            DbContext.Users.Update(user);
+            DbContext.SaveChanges();
         }
 
-        public Post UpdatePost(User user)
+        public void UpdatePost(Post post)
         {
-            throw new System.NotImplementedException();
+            DbContext.Posts.Update(post);
+            DbContext.SaveChanges();
         }
 
-        public User AddUser(User user)
+        public void AddUser(User user)
         {
-            throw new System.NotImplementedException();
+            EntityEntry<User> newlyAdded = DbContext.Users.Add(user);
+            DbContext.SaveChanges();
         }
 
-        public Post AddPost(Post post)
+        public void AddPost(Post post)
         {
-            throw new System.NotImplementedException();
+            EntityEntry<Post> newlyAdded = DbContext.Posts.Add(post);
+            DbContext.SaveChanges();
         }
 
         public List<Post> GetPosts()
         {
-            throw new System.NotImplementedException();
+            var posts = DbContext.Posts.ToList();
+            foreach (var post in posts)
+            {
+                DbContext.Entry(post).Collection(p=>p.Comments).Load();
+            }
+            return posts;
         }
+        
 
         public List<User> GetUsers()
         {
-            throw new System.NotImplementedException();
+            var users = DbContext.Users.ToList();
+            foreach (var user in users)
+            {
+                DbContext.Entry(user).Collection(u=>u.UserConversations).Load();
+                DbContext.Entry(user).Collection( u => u.UserPosts).Load();
+                foreach (var userPost in user.UserPosts)
+                {
+                    DbContext.Entry(userPost).Collection(p=>p.Comments).Load();
+                }
+            }
+
+            return users;
+        }
+
+        public void DeletePost(int postId)
+        {
+            var postToRemove = DbContext.Posts.ToList().FirstOrDefault(p => p.Id == postId);
+            if (postToRemove != null)
+            {
+                DbContext.Posts.Remove(postToRemove);
+                DbContext.SaveChanges();
+            }
+        }
+
+        public void DeleteUser(int userId)
+        {
+            var userToRemove = DbContext.Users.ToList().FirstOrDefault(u => u.Id == userId);
+            if (userToRemove != null)
+            {
+                DbContext.Users.Remove(userToRemove);
+                DbContext.SaveChanges();
+            }
         }
     }
 }

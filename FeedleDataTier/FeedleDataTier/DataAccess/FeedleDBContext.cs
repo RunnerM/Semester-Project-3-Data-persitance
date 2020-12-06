@@ -5,8 +5,8 @@ namespace FeedleDataTier.DataAccess
 {
     public class FeedleDBContext : DbContext
     {
-        private DbSet<User> Users;
-        private DbSet<Post> Posts;
+        public DbSet<User> Users;
+        public DbSet<Post> Posts;
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
