@@ -50,7 +50,9 @@ namespace FeedleDataTier.Data
                 //read
                 byte[] dataFromClient = new byte[1024];
                 int bytesRead = stream.Read(dataFromClient, 0, dataFromClient.Length);
+                Console.WriteLine("here");
                 string s = Encoding.ASCII.GetString(dataFromClient, 0, bytesRead);
+                Console.WriteLine(s);
                 if (s.Equals("stop"))
                 {
                     Console.WriteLine(s);

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WtxmLvfpsLqxWIwVxGEpR0+0Odi9tMF0LMweNJ/L3GAWPgFXCMMIAOEYWb17RIHsSsXRlTGorbBnc1ziiMBYrQ==",
+  "dgSpecHash": "QQSg3egx3i7sHls2G1sIVyoxfHYLcplm0vb7qEbd4s0erTMOVQz/wO4kpMEXeKB6ETU8rsqPbL0LNyCx50xcGw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jenia\\Documents\\GitHub\\Data-Persistence\\FeedleDataTier\\FeedleDataTier\\FeedleDataTier.csproj",
+  "projectFilePath": "C:\\Users\\Jenia\\Documents\\GitHub\\Data-persitance\\FeedleDataTier\\FeedleDataTier\\FeedleDataTier.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jenia\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Jenia\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

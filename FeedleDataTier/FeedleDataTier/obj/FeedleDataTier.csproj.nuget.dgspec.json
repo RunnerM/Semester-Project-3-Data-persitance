@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jenia\\Documents\\GitHub\\Data-Persistence\\FeedleDataTier\\FeedleDataTier\\FeedleDataTier.csproj": {}
+    "C:\\Users\\Jenia\\Documents\\GitHub\\Data-persitance\\FeedleDataTier\\FeedleDataTier\\FeedleDataTier.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jenia\\Documents\\GitHub\\Data-Persistence\\FeedleDataTier\\FeedleDataTier\\FeedleDataTier.csproj": {
+    "C:\\Users\\Jenia\\Documents\\GitHub\\Data-persitance\\FeedleDataTier\\FeedleDataTier\\FeedleDataTier.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jenia\\Documents\\GitHub\\Data-Persistence\\FeedleDataTier\\FeedleDataTier\\FeedleDataTier.csproj",
+        "projectUniqueName": "C:\\Users\\Jenia\\Documents\\GitHub\\Data-persitance\\FeedleDataTier\\FeedleDataTier\\FeedleDataTier.csproj",
         "projectName": "FeedleDataTier",
-        "projectPath": "C:\\Users\\Jenia\\Documents\\GitHub\\Data-Persistence\\FeedleDataTier\\FeedleDataTier\\FeedleDataTier.csproj",
+        "projectPath": "C:\\Users\\Jenia\\Documents\\GitHub\\Data-persitance\\FeedleDataTier\\FeedleDataTier\\FeedleDataTier.csproj",
         "packagesPath": "C:\\Users\\Jenia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jenia\\Documents\\GitHub\\Data-Persistence\\FeedleDataTier\\FeedleDataTier\\obj\\",
+        "outputPath": "C:\\Users\\Jenia\\Documents\\GitHub\\Data-persitance\\FeedleDataTier\\FeedleDataTier\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jenia\\AppData\\Roaming\\NuGet\\NuGet.Config",
