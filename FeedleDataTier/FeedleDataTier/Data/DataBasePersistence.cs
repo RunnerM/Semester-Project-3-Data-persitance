@@ -12,32 +12,33 @@ namespace FeedleDataTier.Data
         {
             this.DbContext = dbContext;
         }
-        public User UpdateUser(string userAsJson)
+
+        public User UpdateUser(User user)
         {
             throw new System.NotImplementedException();
         }
 
-        public Post UpdatePost(string postAsJson)
+        public Post UpdatePost(User user)
         {
             throw new System.NotImplementedException();
         }
 
-        public User AddUser(string userAsJson)
+        public User AddUser(User user)
         {
             throw new System.NotImplementedException();
         }
 
-        public Post AddPost(string postAsJson)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool VerifyUser(string login, string password)
+        public Post AddPost(Post post)
         {
             throw new System.NotImplementedException();
         }
 
         public List<Post> GetPosts()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public List<User> GetUsers()
         {
             throw new System.NotImplementedException();
         }

@@ -16,7 +16,15 @@
         <e p="DataAccess" t="Include">
           <e p="FeedleDBContext.cs" t="Include" />
         </e>
+        <e p="Feedle.db" t="Include" />
+        <e p="Feedle.db-shm" t="Include" />
+        <e p="Feedle.db-wal" t="Include" />
         <e p="FeedleDataTier.csproj" t="IncludeRecursive" />
+        <e p="Migrations" t="Include">
+          <e p="20201206190732_InitialCreate.cs" t="Include" />
+          <e p="20201206190732_InitialCreate.Designer.cs" t="Include" />
+          <e p="FeedleDBContextModelSnapshot.cs" t="Include" />
+        </e>
         <e p="Models" t="Include">
           <e p="Comment.cs" t="Include" />
           <e p="Conversation.cs" t="Include" />
@@ -26,7 +34,18 @@
           <e p="UserConversation.cs" t="Include" />
         </e>
         <e p="Network" t="Include">
+          <e p="AddPostRequest.cs" t="Include" />
+          <e p="DeletePostRequest.cs" t="Include" />
+          <e p="DeleteUserRequest.cs" t="Include" />
+          <e p="GetPostsRequest.cs" t="Include" />
+          <e p="GetPostsResponse.cs" t="Include" />
+          <e p="GetUsersRequest.cs" t="Include" />
+          <e p="GetUsersResponse.cs" t="Include" />
+          <e p="PostUserRequest.cs" t="Include" />
+          <e p="Request.cs" t="Include" />
           <e p="RequestType.cs" t="Include" />
+          <e p="UpdatePostRequest.cs" t="Include" />
+          <e p="UpdateUserRequest.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

@@ -10,7 +10,9 @@ namespace FeedleDataTier.DataAccess
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Database=Feedle_db;Username=postgres;Password=3228");
+            //optionsBuilder.UseNpgsql("Host=localhost;Database=Feedle_db;Username=postgres;Password=3228");
+            optionsBuilder.UseSqlite("Data Source = Feedle.db");
+            optionsBuilder.EnableSensitiveDataLogging();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

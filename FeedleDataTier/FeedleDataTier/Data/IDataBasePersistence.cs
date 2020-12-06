@@ -5,12 +5,13 @@ namespace FeedleDataTier.Data
 {
     public interface IDataBasePersistence
     {
-        User UpdateUser(string userAsJson);
-        Post UpdatePost(string postAsJson);
-        User AddUser(string userAsJson);
-        Post AddPost(string postAsJson);
-        bool VerifyUser(string login, string password);
+        User UpdateUser(User user);
+        Post UpdatePost(User user);
+        User AddUser(User user);
+        Post AddPost(Post post);
         List<Post> GetPosts();
-        
+
+        List<User> GetUsers();
+
     }
 }
