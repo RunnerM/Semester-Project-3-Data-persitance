@@ -23,20 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99ca3e0d-8e77-48e3-a9bd-283121164c9a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/dataSources/e102bbce-e201-4e87-9f49-34ebbd27f695.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/dataSources/e102bbce-e201-4e87-9f49-34ebbd27f695.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/DataAccess/FeedleDBContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/DataAccess/FeedleDBContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Feedle.db" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Feedle.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Migrations/20201206190732_InitialCreate.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Migrations/20201206190732_InitialCreate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Migrations/FeedleDBContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Migrations/FeedleDBContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Network/Request.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Network/Request.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.pdb" afterDir="false" />
     </list>
@@ -71,9 +62,9 @@
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserConversation.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Data/IDataBasePersistence.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/Request.cs" />
-        <option value="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/DataAccess/FeedleDBContext.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" />
       </list>
     </option>
   </component>
@@ -86,8 +77,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.5615595" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.3002736" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.31219512" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
   </component>
@@ -123,7 +117,7 @@
       <workItem from="1607178610204" duration="809000" />
       <workItem from="1607179441891" duration="1334000" />
       <workItem from="1607260553234" duration="20472000" />
-      <workItem from="1607329773493" duration="5210000" />
+      <workItem from="1607329773493" duration="11611000" />
     </task>
     <servers />
   </component>
@@ -152,26 +146,90 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="617" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1607281758022" />
-    <state width="1493" height="436" key="GridCell.Tab.0.bottom" timestamp="1607346744870">
+    <state width="1493" height="188" key="GridCell.Tab.0.bottom" timestamp="1607354372376">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="436" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607346744870" />
+    <state width="1493" height="188" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607354372376" />
     <state width="920" height="263" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1607293354135" />
-    <state width="1493" height="436" key="GridCell.Tab.0.center" timestamp="1607346744870">
+    <state width="1493" height="188" key="GridCell.Tab.0.center" timestamp="1607354372376">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="436" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607346744870" />
+    <state width="1493" height="188" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607354372376" />
     <state width="920" height="263" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1607293354135" />
-    <state width="1493" height="436" key="GridCell.Tab.0.left" timestamp="1607346744869">
+    <state width="1493" height="188" key="GridCell.Tab.0.left" timestamp="1607354372376">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="436" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607346744869" />
+    <state width="1493" height="188" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607354372376" />
     <state width="920" height="263" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1607293354135" />
-    <state width="1493" height="436" key="GridCell.Tab.0.right" timestamp="1607346744870">
+    <state width="1493" height="188" key="GridCell.Tab.0.right" timestamp="1607354372376">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="436" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607346744870" />
+    <state width="1493" height="188" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607354372376" />
     <state width="920" height="263" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1607293354135" />
+    <state width="1493" height="288" key="GridCell.Tab.1.bottom" timestamp="1607349428482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607349428482" />
+    <state width="1493" height="288" key="GridCell.Tab.1.center" timestamp="1607349428481">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1607349428481" />
+    <state width="1493" height="288" key="GridCell.Tab.1.left" timestamp="1607349428479">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1607349428479" />
+    <state width="1493" height="288" key="GridCell.Tab.1.right" timestamp="1607349428482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1607349428482" />
+    <state width="1493" height="288" key="GridCell.Tab.2.bottom" timestamp="1607349428482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607349428482" />
+    <state width="1493" height="288" key="GridCell.Tab.2.center" timestamp="1607349428482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1607349428482" />
+    <state width="1493" height="288" key="GridCell.Tab.2.left" timestamp="1607349428482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1607349428482" />
+    <state width="1493" height="288" key="GridCell.Tab.2.right" timestamp="1607349428482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1607349428482" />
+    <state width="1493" height="288" key="GridCell.Tab.3.bottom" timestamp="1607349428482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607349428482" />
+    <state width="1493" height="288" key="GridCell.Tab.3.center" timestamp="1607349428482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1607349428482" />
+    <state width="1493" height="288" key="GridCell.Tab.3.left" timestamp="1607349428482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1607349428482" />
+    <state width="1493" height="288" key="GridCell.Tab.3.right" timestamp="1607349428482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1607349428482" />
+    <state width="1493" height="288" key="GridCell.Tab.4.bottom" timestamp="1607349428482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.4.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607349428482" />
+    <state width="1493" height="288" key="GridCell.Tab.4.center" timestamp="1607349428482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.4.center/0.0.1536.824@0.0.1536.824" timestamp="1607349428482" />
+    <state width="1493" height="288" key="GridCell.Tab.4.left" timestamp="1607349428482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.4.left/0.0.1536.824@0.0.1536.824" timestamp="1607349428482" />
+    <state width="1493" height="288" key="GridCell.Tab.4.right" timestamp="1607349428482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="288" key="GridCell.Tab.4.right/0.0.1536.824@0.0.1536.824" timestamp="1607349428482" />
     <state x="857" y="258" key="RiderGenerateDialog" timestamp="1607280073323">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

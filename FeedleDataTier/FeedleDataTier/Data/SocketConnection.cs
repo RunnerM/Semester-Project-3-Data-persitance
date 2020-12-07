@@ -57,8 +57,6 @@ using System.Net.Sockets;
                 int bytesRead = stream.Read(dataFromClient, 0, dataFromClient.Length);
                 string message = Encoding.ASCII.GetString(dataFromClient, 0, bytesRead);
                 Console.WriteLine(message);
-                Request requestTest = new Request(RequestType.GetPosts);
-                Console.WriteLine(JsonSerializer.Serialize(requestTest));
                 Request request =
                     JsonSerializer.Deserialize<Request>(Encoding.ASCII.GetString(dataFromClient, 0, bytesRead));
                 if (message.Equals("stop"))
@@ -115,6 +113,7 @@ using System.Net.Sockets;
                         {
                             users = new List<User>();
                         }
+                        Console.WriteLine(JsonSerializer.Serialize(new GetUsersResponse(users)));
                         byte[] dataToClientGetUsers =
                             Encoding.ASCII.GetBytes(JsonSerializer.Serialize(new GetUsersResponse(users)));
                         stream.Write(dataToClientGetUsers,0,dataToClientGetUsers.Length);
