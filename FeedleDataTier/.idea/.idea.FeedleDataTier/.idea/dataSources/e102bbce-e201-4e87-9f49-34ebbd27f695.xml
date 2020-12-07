@@ -13,9 +13,9 @@
     <table id="6" parent="2" name="Comment"/>
     <table id="7" parent="2" name="Conversation"/>
     <table id="8" parent="2" name="Message"/>
-    <table id="9" parent="2" name="Post"/>
-    <table id="10" parent="2" name="User"/>
-    <table id="11" parent="2" name="UserConversation"/>
+    <table id="9" parent="2" name="Posts"/>
+    <table id="10" parent="2" name="UserConversation"/>
+    <table id="11" parent="2" name="Users"/>
     <table id="12" parent="2" name="__EFMigrationsHistory"/>
     <table id="13" parent="2" name="sqlite_master">
       <System>1</System>
@@ -84,10 +84,10 @@
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="28" parent="6" name="FK_Comment_Post_PostId">
+    <foreign-key id="28" parent="6" name="FK_Comment_Posts_PostId">
       <ColNames>PostId</ColNames>
-      <RefTableName>Post</RefTableName>
-      <RefKeyName>PK_Post</RefKeyName>
+      <RefTableName>Posts</RefTableName>
+      <RefKeyName>PK_Posts</RefKeyName>
       <RefColNames>Id</RefColNames>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
@@ -221,89 +221,89 @@
       <Position>11</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <index id="56" parent="9" name="IX_Post_UserId">
+    <index id="56" parent="9" name="IX_Posts_UserId">
       <ColNames>UserId</ColNames>
       <ColumnCollations></ColumnCollations>
     </index>
-    <key id="57" parent="9" name="PK_Post">
+    <key id="57" parent="9" name="PK_Posts">
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="58" parent="9" name="FK_Post_User_UserId">
+    <foreign-key id="58" parent="9" name="FK_Posts_Users_UserId">
       <ColNames>UserId</ColNames>
-      <RefTableName>User</RefTableName>
-      <RefKeyName>PK_User</RefKeyName>
+      <RefTableName>Users</RefTableName>
+      <RefKeyName>PK_Users</RefKeyName>
       <RefColNames>Id</RefColNames>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="59" parent="10" name="Id">
-      <Position>1</Position>
-      <DataType>INTEGER|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="60" parent="10" name="UserName">
-      <Position>2</Position>
-      <DataType>TEXT|0s</DataType>
-    </column>
-    <column id="61" parent="10" name="Password">
-      <Position>3</Position>
-      <DataType>TEXT|0s</DataType>
-    </column>
-    <column id="62" parent="10" name="DisplayedUserName">
-      <Position>4</Position>
-      <DataType>TEXT|0s</DataType>
-    </column>
-    <column id="63" parent="10" name="SecurityLevel">
-      <Position>5</Position>
-      <DataType>INTEGER|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <key id="64" parent="10" name="PK_User">
-      <ColNames>Id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="65" parent="11" name="UserId">
+    <column id="59" parent="10" name="UserId">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="66" parent="11" name="ConversationId">
+    <column id="60" parent="10" name="ConversationId">
       <Position>2</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="67" parent="11" name="sqlite_autoindex_UserConversation_1">
+    <index id="61" parent="10" name="sqlite_autoindex_UserConversation_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>UserId
 ConversationId</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <index id="68" parent="11" name="IX_UserConversation_ConversationId">
+    <index id="62" parent="10" name="IX_UserConversation_ConversationId">
       <ColNames>ConversationId</ColNames>
       <ColumnCollations></ColumnCollations>
     </index>
-    <key id="69" parent="11" name="PK_UserConversation">
+    <key id="63" parent="10" name="PK_UserConversation">
       <ColNames>UserId
 ConversationId</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_UserConversation_1</UnderlyingIndexName>
     </key>
-    <foreign-key id="70" parent="11" name="FK_UserConversation_User_UserId">
+    <foreign-key id="64" parent="10" name="FK_UserConversation_Users_UserId">
       <ColNames>UserId</ColNames>
-      <RefTableName>User</RefTableName>
-      <RefKeyName>PK_User</RefKeyName>
+      <RefTableName>Users</RefTableName>
+      <RefKeyName>PK_Users</RefKeyName>
       <RefColNames>Id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="71" parent="11" name="FK_UserConversation_Conversation_ConversationId">
+    <foreign-key id="65" parent="10" name="FK_UserConversation_Conversation_ConversationId">
       <ColNames>ConversationId</ColNames>
       <RefTableName>Conversation</RefTableName>
       <RefKeyName>PK_Conversation</RefKeyName>
       <RefColNames>Id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
+    <column id="66" parent="11" name="Id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="67" parent="11" name="UserName">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="68" parent="11" name="Password">
+      <Position>3</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="69" parent="11" name="DisplayedUserName">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="70" parent="11" name="SecurityLevel">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="71" parent="11" name="PK_Users">
+      <ColNames>Id</ColNames>
+      <Primary>1</Primary>
+    </key>
     <column id="72" parent="12" name="MigrationId">
       <Position>1</Position>
       <DataType>TEXT|0s</DataType>

@@ -3,6 +3,7 @@
  using System.Linq;
  using FeedleDataTier.DataAccess;
 using FeedleDataTier.Models;
+ using FeedleDataTier.Network;
  using Microsoft.EntityFrameworkCore.ChangeTracking;
 
  namespace FeedleDataTier.Data
@@ -42,29 +43,39 @@ using FeedleDataTier.Models;
 
         public List<Post> GetPosts()
         {
-            var posts = DbContext.Posts.ToList();
-            foreach (var post in posts)
+            if (DbContext.Posts.Any())
             {
-                DbContext.Entry(post).Collection(p=>p.Comments).Load();
+                var posts = DbContext.Posts.ToList();
+                foreach (var post in posts)
+                {
+                    DbContext.Entry(post).Collection(p=>p.Comments).Load();
+                }
+                return posts;
             }
-            return posts;
+
+            return null;
         }
         
 
         public List<User> GetUsers()
         {
-            var users = DbContext.Users.ToList();
-            foreach (var user in users)
+            if (DbContext.Users.Any())
             {
-                DbContext.Entry(user).Collection(u=>u.UserConversations).Load();
-                DbContext.Entry(user).Collection( u => u.UserPosts).Load();
-                foreach (var userPost in user.UserPosts)
+                var users = DbContext.Users.ToList();
+                foreach (var user in users)
                 {
-                    DbContext.Entry(userPost).Collection(p=>p.Comments).Load();
+                    DbContext.Entry(user).Collection(u => u.UserConversations).Load();
+                    DbContext.Entry(user).Collection(u => u.UserPosts).Load();
+                    foreach (var userPost in user.UserPosts)
+                    {
+                        DbContext.Entry(userPost).Collection(p => p.Comments).Load();
+                    }
                 }
+
+                return users;
             }
 
-            return users;
+            return null;
         }
 
         public void DeletePost(int postId)

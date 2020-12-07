@@ -56,9 +56,11 @@ using System.Net.Sockets;
                 byte[] dataFromClient = new byte[1024];
                 int bytesRead = stream.Read(dataFromClient, 0, dataFromClient.Length);
                 string message = Encoding.ASCII.GetString(dataFromClient, 0, bytesRead);
+                Console.WriteLine(message);
+                Request requestTest = new Request(RequestType.GetPosts);
+                Console.WriteLine(JsonSerializer.Serialize(requestTest));
                 Request request =
                     JsonSerializer.Deserialize<Request>(Encoding.ASCII.GetString(dataFromClient, 0, bytesRead));
-                Console.WriteLine(message);
                 if (message.Equals("stop"))
                 {
                     Console.WriteLine(message);
@@ -98,6 +100,10 @@ using System.Net.Sockets;
                     
                     case RequestType.GetPosts :
                         List<Post> posts = DbPersistence.GetPosts();
+                        if (posts == null)
+                        {
+                            posts = new List<Post>();
+                        }
                         byte[] dataToClientGetPosts =
                             Encoding.ASCII.GetBytes(JsonSerializer.Serialize(new GetPostsResponse(posts)));
                         stream.Write(dataToClientGetPosts,0,dataToClientGetPosts.Length);
@@ -105,6 +111,10 @@ using System.Net.Sockets;
                     
                     case RequestType.GetUsers:
                         List<User> users = DbPersistence.GetUsers();
+                        if (users == null)
+                        {
+                            users = new List<User>();
+                        }
                         byte[] dataToClientGetUsers =
                             Encoding.ASCII.GetBytes(JsonSerializer.Serialize(new GetUsersResponse(users)));
                         stream.Write(dataToClientGetUsers,0,dataToClientGetUsers.Length);

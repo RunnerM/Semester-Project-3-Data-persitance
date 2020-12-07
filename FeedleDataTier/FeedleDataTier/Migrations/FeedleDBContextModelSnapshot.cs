@@ -153,7 +153,7 @@ namespace FeedleDataTier.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Post");
+                    b.ToTable("Posts");
                 });
 
             modelBuilder.Entity("FeedleDataTier.Models.User", b =>
@@ -176,7 +176,7 @@ namespace FeedleDataTier.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("FeedleDataTier.Models.UserConversation", b =>
