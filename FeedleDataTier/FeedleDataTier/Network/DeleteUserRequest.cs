@@ -4,7 +4,7 @@ namespace FeedleDataTier.Network
 {
     public class DeleteUserRequest : Request
     {
-        [JsonPropertyName("usedId")]
+        [JsonPropertyName("userId")]
         public int UserId { get; set;}
 
         public DeleteUserRequest(int userId) : base(RequestType.DeleteUser)

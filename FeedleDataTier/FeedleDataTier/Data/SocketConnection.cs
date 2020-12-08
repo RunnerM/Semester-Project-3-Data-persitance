@@ -53,7 +53,7 @@ using System.Net.Sockets;
             while (true)
             {
                 //read
-                byte[] dataFromClient = new byte[1024];
+                byte[] dataFromClient = new byte[1024*1024*8];
                 int bytesRead = stream.Read(dataFromClient, 0, dataFromClient.Length);
                 string message = Encoding.ASCII.GetString(dataFromClient, 0, bytesRead);
                 Console.WriteLine(message);
