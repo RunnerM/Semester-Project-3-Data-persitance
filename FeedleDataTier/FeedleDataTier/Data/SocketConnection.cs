@@ -72,8 +72,7 @@ using System.Net.Sockets;
                         AddPostRequest addPostRequest = JsonSerializer.Deserialize<AddPostRequest>(Encoding.ASCII.GetString(dataFromClient, 0,
                             bytesRead));
                         DbPersistence.AddPost(addPostRequest.Post);
-                        byte[] dataToClientAddPost = Encoding.ASCII.GetBytes(JsonSerializer.Serialize(addPostRequest));
-                        stream.Write(dataToClientAddPost, 0, dataToClientAddPost.Length);
+                        stream.Write(dataFromClient, 0, dataFromClient.Length);
                         break;
                     
                     case RequestType.DeletePost :
@@ -82,8 +81,7 @@ using System.Net.Sockets;
                             Encoding.ASCII.GetString(dataFromClient, 0,
                                 bytesRead));
                         DbPersistence.DeletePost(deletePostRequest.PostId);
-                        byte[] dataToClientDeletePost = Encoding.ASCII.GetBytes(JsonSerializer.Serialize(deletePostRequest));
-                        stream.Write(dataToClientDeletePost, 0, dataToClientDeletePost.Length);
+                        stream.Write(dataFromClient, 0, dataFromClient.Length);
                         break;
                     
                     case RequestType.DeleteUser :
@@ -91,9 +89,7 @@ using System.Net.Sockets;
                         DeleteUserRequest deleteUserRequest = JsonSerializer.Deserialize<DeleteUserRequest>(
                             Encoding.ASCII.GetString(dataFromClient, 0, bytesRead));
                         DbPersistence.DeleteUser(deleteUserRequest.UserId);
-                        byte[] dataToClientDeleteUser =
-                            Encoding.ASCII.GetBytes(JsonSerializer.Serialize(deleteUserRequest));
-                        stream.Write(dataToClientDeleteUser, 0, dataToClientDeleteUser.Length);
+                        stream.Write(dataFromClient, 0, dataFromClient.Length);
                         break;
                     
                     case RequestType.GetPosts :
