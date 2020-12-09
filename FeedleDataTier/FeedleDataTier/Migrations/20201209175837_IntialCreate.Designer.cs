@@ -9,14 +9,33 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FeedleDataTier.Migrations
 {
     [DbContext(typeof(FeedleDBContext))]
-    [Migration("20201207131029_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20201209175837_IntialCreate")]
+    partial class IntialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.0");
+
+            modelBuilder.Entity("Feedle.Models.UserInformation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserInformation");
+                });
 
             modelBuilder.Entity("FeedleDataTier.Models.Comment", b =>
                 {
@@ -121,6 +140,9 @@ namespace FeedleDataTier.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("Approvals")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("AuthorUserName")
                         .HasColumnType("TEXT");
 
@@ -128,6 +150,9 @@ namespace FeedleDataTier.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Day")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Disapprovals")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Hour")
@@ -196,6 +221,13 @@ namespace FeedleDataTier.Migrations
                     b.ToTable("UserConversation");
                 });
 
+            modelBuilder.Entity("Feedle.Models.UserInformation", b =>
+                {
+                    b.HasOne("FeedleDataTier.Models.User", null)
+                        .WithMany("SubscriptionUsersInformation")
+                        .HasForeignKey("UserId");
+                });
+
             modelBuilder.Entity("FeedleDataTier.Models.Comment", b =>
                 {
                     b.HasOne("FeedleDataTier.Models.Post", null)
@@ -250,6 +282,8 @@ namespace FeedleDataTier.Migrations
 
             modelBuilder.Entity("FeedleDataTier.Models.User", b =>
                 {
+                    b.Navigation("SubscriptionUsersInformation");
+
                     b.Navigation("UserConversations");
 
                     b.Navigation("UserPosts");

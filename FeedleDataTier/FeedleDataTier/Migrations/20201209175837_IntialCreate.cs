@@ -2,7 +2,7 @@
 
 namespace FeedleDataTier.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class IntialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -77,6 +77,8 @@ namespace FeedleDataTier.Migrations
                     Hour = table.Column<int>(type: "INTEGER", nullable: false),
                     Minute = table.Column<int>(type: "INTEGER", nullable: false),
                     Second = table.Column<int>(type: "INTEGER", nullable: false),
+                    Approvals = table.Column<int>(type: "INTEGER", nullable: false),
+                    Disapprovals = table.Column<int>(type: "INTEGER", nullable: false),
                     UserId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
@@ -112,6 +114,26 @@ namespace FeedleDataTier.Migrations
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserInformation",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserName = table.Column<string>(type: "TEXT", nullable: true),
+                    UserId = table.Column<int>(type: "INTEGER", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserInformation", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserInformation_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -161,6 +183,11 @@ namespace FeedleDataTier.Migrations
                 name: "IX_UserConversation_ConversationId",
                 table: "UserConversation",
                 column: "ConversationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserInformation_UserId",
+                table: "UserInformation",
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -173,6 +200,9 @@ namespace FeedleDataTier.Migrations
 
             migrationBuilder.DropTable(
                 name: "UserConversation");
+
+            migrationBuilder.DropTable(
+                name: "UserInformation");
 
             migrationBuilder.DropTable(
                 name: "Posts");

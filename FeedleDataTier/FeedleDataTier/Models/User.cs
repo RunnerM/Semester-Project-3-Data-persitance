@@ -1,8 +1,9 @@
-﻿﻿using System.Collections.Generic;
+﻿﻿﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
  using System.Text.Json.Serialization;
+  using Feedle.Models;
 
- namespace FeedleDataTier.Models
+  namespace FeedleDataTier.Models
 {
     public class User
     {
@@ -21,5 +22,7 @@ using System.ComponentModel.DataAnnotations;
         public List<UserConversation> UserConversations { get; set; }
         [JsonPropertyName("securityLevel")]
         public int SecurityLevel { get; set; }
+        public List<UserInformation> SubscriptionUsersInformation { get; set; }
+        
     }
 }

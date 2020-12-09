@@ -65,6 +65,7 @@ using FeedleDataTier.Models;
                 foreach (var user in users)
                 {
                     DbContext.Entry(user).Collection(u => u.UserConversations).Load();
+                    DbContext.Entry(user).Collection(u => u.SubscriptionUsersInformation).Load();
                     DbContext.Entry(user).Collection(u => u.UserPosts).Load();
                     foreach (var userPost in user.UserPosts)
                     {
