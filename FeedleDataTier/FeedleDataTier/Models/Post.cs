@@ -28,7 +28,7 @@
         // public byte[] images;
         [JsonPropertyName("comments")]
         public List<Comment> Comments { get; set; }
-        [JsonPropertyName("approvalIndex")] public int Approvals { get; set; }
-        [JsonPropertyName("disapprovalIndex")] public int Disapprovals { get; set; }
+        [JsonPropertyName("approvals")] public int Approvals { get; set; }
+        [JsonPropertyName("disapprovals")] public int Disapprovals { get; set; }
     }
 }

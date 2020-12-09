@@ -23,16 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99ca3e0d-8e77-48e3-a9bd-283121164c9a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Models/UserInformation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Feedle.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Feedle.db-shm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Feedle.db-wal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Migrations/20201207131029_InitialCreate.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Migrations/20201207131029_InitialCreate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Migrations/FeedleDBContextModelSnapshot.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/Post.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/User.cs" afterDir="false" />
     </list>
@@ -74,9 +65,9 @@
         <option value="$PROJECT_DIR$/FeedleDataTier/DataAccess/FeedleDBContext.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/DeleteUserRequest.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/Post.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/User.cs" />
-        <option value="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" />
       </list>
     </option>
   </component>
@@ -133,7 +124,7 @@
       <workItem from="1607421641824" duration="18239000" />
       <workItem from="1607446064826" duration="1056000" />
       <workItem from="1607455582436" duration="6467000" />
-      <workItem from="1607507705379" duration="10505000" />
+      <workItem from="1607507705379" duration="11637000" />
     </task>
     <servers />
   </component>
