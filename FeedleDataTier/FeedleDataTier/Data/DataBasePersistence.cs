@@ -4,51 +4,57 @@
  using FeedleDataTier.DataAccess;
 using FeedleDataTier.Models;
  using FeedleDataTier.Network;
+ using Microsoft.EntityFrameworkCore;
  using Microsoft.EntityFrameworkCore.ChangeTracking;
 
  namespace FeedleDataTier.Data
 {
     public class DataBasePersistence : IDataBasePersistence
     {
-        private FeedleDBContext DbContext;
+        private FeedleDBContext DataContext;
 
         public DataBasePersistence(FeedleDBContext dbContext)
         {
-            this.DbContext = dbContext;
+            this.DataContext = dbContext;
         }
 
         public void UpdateUser(User user)
         {
-            DbContext.Users.Update(user);
-            DbContext.SaveChanges();
+            DataContext.Users.Update(user);
+            DataContext.SaveChanges();
         }
 
         public void UpdatePost(Post post)
         {
-            DbContext.Posts.Update(post);
-            DbContext.SaveChanges();
+            DataContext.Posts.Update(post);
+            DataContext.SaveChanges();
         }
 
         public void AddUser(User user)
         {
-            EntityEntry<User> newlyAdded = DbContext.Users.Add(user);
-            DbContext.SaveChanges();
+            EntityEntry<User> newlyAdded = DataContext.Users.Add(user);
+            DataContext.SaveChanges();
         }
 
         public void AddPost(Post post)
         {
-            EntityEntry<Post> newlyAdded = DbContext.Posts.Add(post);
-            DbContext.SaveChanges();
+            User userToBeUpdated = DataContext.Users.FirstOrDefault(u => u.UserName.Equals(post.AuthorUserName));
+            if (userToBeUpdated != null)
+            {
+                userToBeUpdated.UserPosts.Add(post);
+                DataContext.Update(userToBeUpdated);
+                DataContext.SaveChanges();
+            }
         }
 
         public List<Post> GetPosts()
         {
-            if (DbContext.Posts.Any())
+            if (DataContext.Posts.Any())
             {
-                var posts = DbContext.Posts.ToList();
+                var posts = DataContext.Posts.ToList();
                 foreach (var post in posts)
                 {
-                    DbContext.Entry(post).Collection(p=>p.Comments).Load();
+                    DataContext.Entry(post).Collection(p=>p.Comments).Load();
                 }
                 return posts;
             }
@@ -59,17 +65,17 @@ using FeedleDataTier.Models;
 
         public List<User> GetUsers()
         {
-            if (DbContext.Users.Any())
+            if (DataContext.Users.Any())
             {
-                var users = DbContext.Users.ToList();
+                var users = DataContext.Users.ToList();
                 foreach (var user in users)
                 {
-                    DbContext.Entry(user).Collection(u => u.UserConversations).Load();
-                    DbContext.Entry(user).Collection(u => u.SubscriptionUsersInformation).Load();
-                    DbContext.Entry(user).Collection(u => u.UserPosts).Load();
+                    DataContext.Entry(user).Collection(u => u.UserConversations).Load();
+                    DataContext.Entry(user).Collection(u => u.SubscriptionUsersInformation).Load();
+                    DataContext.Entry(user).Collection(u => u.UserPosts).Load();
                     foreach (var userPost in user.UserPosts)
                     {
-                        DbContext.Entry(userPost).Collection(p => p.Comments).Load();
+                        DataContext.Entry(userPost).Collection(p => p.Comments).Load();
                     }
                 }
 
@@ -81,21 +87,21 @@ using FeedleDataTier.Models;
 
         public void DeletePost(int postId)
         {
-            var postToRemove = DbContext.Posts.ToList().FirstOrDefault(p => p.Id == postId);
+            var postToRemove = DataContext.Posts.ToList().FirstOrDefault(p => p.Id == postId);
             if (postToRemove != null)
             {
-                DbContext.Posts.Remove(postToRemove);
-                DbContext.SaveChanges();
+                DataContext.Posts.Remove(postToRemove);
+                DataContext.SaveChanges();
             }
         }
 
         public void DeleteUser(int userId)
         {
-            var userToRemove = DbContext.Users.ToList().FirstOrDefault(u => u.Id == userId);
+            var userToRemove = DataContext.Users.ToList().FirstOrDefault(u => u.Id == userId);
             if (userToRemove != null)
             {
-                DbContext.Users.Remove(userToRemove);
-                DbContext.SaveChanges();
+                DataContext.Users.Remove(userToRemove);
+                DataContext.SaveChanges();
             }
         }
     }
