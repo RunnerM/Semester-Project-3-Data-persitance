@@ -7,11 +7,11 @@
     {
         [Key]
         [JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int MessageId { get; set; }
         [JsonPropertyName("content")]
         public string Content { get; set; }
         [JsonPropertyName("AuthorId")]
-        public int AuthorId { get; set; }
+        public int UserId { get; set; }
         [JsonPropertyName("day")]
         public int Day { get; set; }
         [JsonPropertyName("month")]
@@ -24,5 +24,7 @@
         public int Minute { get; set; }
         [JsonPropertyName("second")]
         public int Second { get; set; }
+        [JsonPropertyName("conversationId")]
+        public int ConversationId { get; set; }
     }
 }

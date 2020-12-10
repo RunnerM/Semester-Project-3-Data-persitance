@@ -1,12 +1,16 @@
 ﻿﻿﻿using System.Collections.Generic;
- using System.Text.Json.Serialization;
+  using System.ComponentModel.DataAnnotations;
+  using System.Text.Json.Serialization;
 
  namespace FeedleDataTier.Models
 {
     public class Post
     {
+        [Key]
         [JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int PostId { get; set; }
+        [JsonPropertyName("userId")]
+        public int UserId { get; set; }
         [JsonPropertyName("title")]
         public string Title { get; set; }
         [JsonPropertyName("content")]
@@ -30,5 +34,10 @@
         public List<Comment> Comments { get; set; }
         [JsonPropertyName("approvals")] public int Approvals { get; set; }
         [JsonPropertyName("disapprovals")] public int Disapprovals { get; set; }
+
+        public Post()
+        {
+            this.Comments = new List<Comment>();
+        }
     }
 }

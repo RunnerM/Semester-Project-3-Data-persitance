@@ -8,6 +8,10 @@ namespace FeedleDataTier.DataAccess
         public DbSet<User> Users { get; set; }
         public DbSet<Post> Posts { get; set; }
         
+        public DbSet<Comment> Comments { get; set; }
+        
+        public DbSet<Message> Messages { get; set; }
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseNpgsql("Host=localhost;Database=Feedle_db;Username=postgres;Password=3228");

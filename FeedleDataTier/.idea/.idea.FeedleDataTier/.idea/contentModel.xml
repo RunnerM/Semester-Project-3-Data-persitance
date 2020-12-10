@@ -21,8 +21,8 @@
         <e p="Feedle.db-wal" t="Include" />
         <e p="FeedleDataTier.csproj" t="IncludeRecursive" />
         <e p="Migrations" t="Include">
-          <e p="20201209175837_IntialCreate.cs" t="Include" />
-          <e p="20201209175837_IntialCreate.Designer.cs" t="Include" />
+          <e p="20201210172328_InitialCreate.cs" t="Include" />
+          <e p="20201210172328_InitialCreate.Designer.cs" t="Include" />
           <e p="FeedleDBContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
@@ -35,6 +35,7 @@
           <e p="UserInformation.cs" t="Include" />
         </e>
         <e p="Network" t="Include">
+          <e p="AddCommentRequest.cs" t="Include" />
           <e p="AddPostRequest.cs" t="Include" />
           <e p="DeletePostRequest.cs" t="Include" />
           <e p="DeleteUserRequest.cs" t="Include" />
@@ -45,6 +46,7 @@
           <e p="PostUserRequest.cs" t="Include" />
           <e p="Request.cs" t="Include" />
           <e p="RequestType.cs" t="Include" />
+          <e p="SendMessageRequest.cs" t="Include" />
           <e p="UpdatePostRequest.cs" t="Include" />
           <e p="UpdateUserRequest.cs" t="Include" />
         </e>

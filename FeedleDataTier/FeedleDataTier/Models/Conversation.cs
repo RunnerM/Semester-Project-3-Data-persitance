@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
     {
         [Key]
         [JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int ConversationId { get; set; }
         [JsonPropertyName("title")]
         public string Title { get; set; }
         [JsonPropertyName("messages")]

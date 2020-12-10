@@ -26,7 +26,7 @@ using FeedleDataTier.Models;
 
         public void UpdatePost(Post post)
         {
-            DataContext.Posts.Update(post);
+            DataContext.Update(post);
             DataContext.SaveChanges();
         }
 
@@ -38,13 +38,8 @@ using FeedleDataTier.Models;
 
         public void AddPost(Post post)
         {
-            User userToBeUpdated = DataContext.Users.FirstOrDefault(u => u.UserName.Equals(post.AuthorUserName));
-            if (userToBeUpdated != null)
-            {
-                userToBeUpdated.UserPosts.Add(post);
-                DataContext.Update(userToBeUpdated);
-                DataContext.SaveChanges();
-            }
+            EntityEntry<Post> newlyAdded = DataContext.Posts.Add(post);
+            DataContext.SaveChanges();
         }
 
         public List<Post> GetPosts()
@@ -87,7 +82,7 @@ using FeedleDataTier.Models;
 
         public void DeletePost(int postId)
         {
-            var postToRemove = DataContext.Posts.ToList().FirstOrDefault(p => p.Id == postId);
+            var postToRemove = DataContext.Posts.ToList().FirstOrDefault(p => p.PostId == postId);
             if (postToRemove != null)
             {
                 DataContext.Posts.Remove(postToRemove);
@@ -103,6 +98,18 @@ using FeedleDataTier.Models;
                 DataContext.Users.Remove(userToRemove);
                 DataContext.SaveChanges();
             }
+        }
+
+        public void AddComment(Comment comment)
+        {
+            EntityEntry<Comment> newlyAdded = DataContext.Comments.Add(comment);
+            DataContext.SaveChanges();
+        }
+
+        public void SendMessage(Message message)
+        {
+            EntityEntry<Message> newlyAdded = DataContext.Messages.Add(message);
+            DataContext.SaveChanges();
         }
     }
 }

@@ -17,5 +17,9 @@ namespace FeedleDataTier.Data
 
         List<User> GetUsers();
 
+        void AddComment(Comment comment);
+
+        void SendMessage(Message message);
+
     }
 }

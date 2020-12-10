@@ -8,11 +8,11 @@ using System.ComponentModel.DataAnnotations;
     {
         [Key]
         [JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int CommentId { get; set; }
         [JsonPropertyName("content")]
         public string Content { get; set; }
-        [JsonPropertyName("authorId")]
-        public int AuthorId { get; set; }
+        [JsonPropertyName("userId")]
+        public int UserId { get; set; }
         [JsonPropertyName("authorUserName")]
         public string AuthorUserName { get; set; }
         [JsonPropertyName("day")]

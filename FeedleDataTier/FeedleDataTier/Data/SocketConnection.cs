@@ -162,6 +162,24 @@ using System.Net.Sockets;
                         client.Send(toSendLenBytesUpdateUser);
                         client.Send(toSendBytesUpdateUser);
                         break;
+                    case RequestType.AddComment:
+                        AddCommentRequest addCommentRequest = JsonSerializer.Deserialize<AddCommentRequest>(message);
+                        DbPersistence.AddComment(addCommentRequest.Comment);
+                        int toSendAddComment = Encoding.ASCII.GetByteCount(message);
+                        byte[] toSendBytesAddComment = Encoding.ASCII.GetBytes(message);
+                        byte[] toSendLenBytesAddComment = BitConverter.GetBytes(toSendAddComment);
+                        client.Send(toSendLenBytesAddComment);
+                        client.Send(toSendBytesAddComment);
+                        break;
+                    case RequestType.SendMessage:
+                        SendMessageRequest sendMessageRequest = JsonSerializer.Deserialize<SendMessageRequest>(message);
+                        DbPersistence.SendMessage(sendMessageRequest.Message);
+                        int toSendMessage = Encoding.ASCII.GetByteCount(message);
+                        byte[] toSendBytesMessage = Encoding.ASCII.GetBytes(message);
+                        byte[] toSendLenBytesMessage = BitConverter.GetBytes(toSendMessage);
+                        client.Send(toSendLenBytesMessage);
+                        client.Send(toSendBytesMessage);
+                        break;
                 }
                 
             }
