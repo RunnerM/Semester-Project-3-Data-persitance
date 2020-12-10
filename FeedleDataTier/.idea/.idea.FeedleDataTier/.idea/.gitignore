@@ -1,0 +1,13 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/projectSettingsUpdater.xml
+/.idea.ConsoleTestForGit.iml
+/contentModel.xml
+# Datasource local storage ignored files
+/../../../../../../../../:\OneDrive - ViaUC\Semester_3\SEP3\Source\Data-Persistance_v2\Data-persitance\FeedleDataTier\.idea\.idea.FeedleDataTier\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
