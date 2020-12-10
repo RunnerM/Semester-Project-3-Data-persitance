@@ -30,16 +30,18 @@ using FeedleDataTier.Models;
             DataContext.SaveChanges();
         }
 
-        public void AddUser(User user)
+        public User AddUser(User user)
         {
             EntityEntry<User> newlyAdded = DataContext.Users.Add(user);
             DataContext.SaveChanges();
+            return newlyAdded.Entity;
         }
 
-        public void AddPost(Post post)
+        public Post AddPost(Post post)
         {
             EntityEntry<Post> newlyAdded = DataContext.Posts.Add(post);
             DataContext.SaveChanges();
+            return newlyAdded.Entity;
         }
 
         public List<Post> GetPosts()

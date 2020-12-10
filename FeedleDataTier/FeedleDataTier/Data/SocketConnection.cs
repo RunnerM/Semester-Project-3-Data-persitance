@@ -75,9 +75,10 @@ using System.Net.Sockets;
                     case RequestType.AddPost:
                         
                         AddPostRequest addPostRequest = JsonSerializer.Deserialize<AddPostRequest>(message);
-                        DbPersistence.AddPost(addPostRequest.Post);
-                        int toSendLenAddPost = Encoding.ASCII.GetByteCount(message);
-                        byte[] toSendBytesAddPost = Encoding.ASCII.GetBytes(message);
+                        Post newPost = DbPersistence.AddPost(addPostRequest.Post);
+                        string responseMessageAddPost = JsonSerializer.Serialize(new AddPostRequest(newPost));
+                        int toSendLenAddPost = Encoding.ASCII.GetByteCount(responseMessageAddPost);
+                        byte[] toSendBytesAddPost = Encoding.ASCII.GetBytes(responseMessageAddPost);
                         byte[] toSendLenBytesAddPost = BitConverter.GetBytes(toSendLenAddPost);
                         client.Send(toSendLenBytesAddPost);
                         client.Send(toSendBytesAddPost);
@@ -135,9 +136,10 @@ using System.Net.Sockets;
                     
                     case RequestType.PostUser:
                         PostUserRequest postUserRequest = JsonSerializer.Deserialize<PostUserRequest>(message);
-                        DbPersistence.AddUser(postUserRequest.User);
-                        int toSendPostUser = Encoding.ASCII.GetByteCount(message);
-                        byte[] toSendBytesPostUser = Encoding.ASCII.GetBytes(message);
+                        User newUser = DbPersistence.AddUser(postUserRequest.User);
+                        string responseMessagePostUser = JsonSerializer.Serialize(new PostUserRequest(newUser));
+                        int toSendPostUser = Encoding.ASCII.GetByteCount(responseMessagePostUser);
+                        byte[] toSendBytesPostUser = Encoding.ASCII.GetBytes(responseMessagePostUser);
                         byte[] toSendLenBytesPostUser = BitConverter.GetBytes(toSendPostUser);
                         client.Send(toSendLenBytesPostUser);
                         client.Send(toSendBytesPostUser);

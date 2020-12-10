@@ -7,8 +7,8 @@ namespace FeedleDataTier.Data
     {
         void UpdateUser(User user);
         void UpdatePost(Post post);
-        void AddUser(User user);
-        void AddPost(Post post);
+        User AddUser(User user);
+        Post AddPost(Post post);
         List<Post> GetPosts();
 
         void DeletePost(int postId);
