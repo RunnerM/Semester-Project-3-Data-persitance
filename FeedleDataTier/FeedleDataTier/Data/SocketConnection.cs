@@ -112,7 +112,7 @@ using System.Net.Sockets;
                         {
                             posts = new List<Post>();
                         }
-                        String getPostsResponseMessage = JsonSerializer.Serialize(new GetPostsResponse(posts));
+                        string getPostsResponseMessage = JsonSerializer.Serialize(new GetPostsResponse(posts));
                         int toGetPosts = Encoding.ASCII.GetByteCount(getPostsResponseMessage);
                         byte[] toSendLenGetPosts = BitConverter.GetBytes(toGetPosts);
                         byte[] dataToClientGetPosts = Encoding.ASCII.GetBytes(getPostsResponseMessage);
@@ -126,7 +126,7 @@ using System.Net.Sockets;
                         {
                             users = new List<User>();
                         }
-                        String getUsersResponseMessage = JsonSerializer.Serialize(new GetUsersResponse(users));
+                        string getUsersResponseMessage = JsonSerializer.Serialize(new GetUsersResponse(users));
                         int toGetUsers = Encoding.ASCII.GetByteCount(getUsersResponseMessage);
                         byte[] toSendLenGetUsers = BitConverter.GetBytes(toGetUsers);
                         byte[] dataToClientGetUsers = Encoding.ASCII.GetBytes(getUsersResponseMessage);
@@ -166,18 +166,21 @@ using System.Net.Sockets;
                         break;
                     case RequestType.AddComment:
                         AddCommentRequest addCommentRequest = JsonSerializer.Deserialize<AddCommentRequest>(message);
-                        DbPersistence.AddComment(addCommentRequest.Comment);
-                        int toSendAddComment = Encoding.ASCII.GetByteCount(message);
-                        byte[] toSendBytesAddComment = Encoding.ASCII.GetBytes(message);
+                        Comment newComment = DbPersistence.AddComment(addCommentRequest.Comment);
+                        string responseMessageAddComment = JsonSerializer.Serialize(new AddCommentRequest(newComment));
+                        int toSendAddComment = Encoding.ASCII.GetByteCount(responseMessageAddComment);
+                        byte[] toSendBytesAddComment = Encoding.ASCII.GetBytes(responseMessageAddComment);
                         byte[] toSendLenBytesAddComment = BitConverter.GetBytes(toSendAddComment);
                         client.Send(toSendLenBytesAddComment);
                         client.Send(toSendBytesAddComment);
                         break;
                     case RequestType.SendMessage:
                         SendMessageRequest sendMessageRequest = JsonSerializer.Deserialize<SendMessageRequest>(message);
-                        DbPersistence.SendMessage(sendMessageRequest.Message);
-                        int toSendMessage = Encoding.ASCII.GetByteCount(message);
-                        byte[] toSendBytesMessage = Encoding.ASCII.GetBytes(message);
+                        Message newMessage = DbPersistence.SendMessage(sendMessageRequest.Message);
+                        string responseMessageSendMessage =
+                            JsonSerializer.Serialize(new SendMessageRequest(newMessage));
+                        int toSendMessage = Encoding.ASCII.GetByteCount(responseMessageSendMessage);
+                        byte[] toSendBytesMessage = Encoding.ASCII.GetBytes(responseMessageSendMessage);
                         byte[] toSendLenBytesMessage = BitConverter.GetBytes(toSendMessage);
                         client.Send(toSendLenBytesMessage);
                         client.Send(toSendBytesMessage);

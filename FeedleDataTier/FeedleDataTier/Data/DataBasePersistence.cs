@@ -102,16 +102,19 @@ using FeedleDataTier.Models;
             }
         }
 
-        public void AddComment(Comment comment)
+        public Comment AddComment(Comment comment)
         {
             EntityEntry<Comment> newlyAdded = DataContext.Comments.Add(comment);
             DataContext.SaveChanges();
+            return newlyAdded.Entity;
+
         }
 
-        public void SendMessage(Message message)
+        public Message SendMessage(Message message)
         {
             EntityEntry<Message> newlyAdded = DataContext.Messages.Add(message);
             DataContext.SaveChanges();
+            return newlyAdded.Entity;
         }
     }
 }

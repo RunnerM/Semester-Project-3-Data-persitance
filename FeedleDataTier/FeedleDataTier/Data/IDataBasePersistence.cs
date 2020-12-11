@@ -1,4 +1,5 @@
-﻿﻿using System.Collections.Generic;
+﻿﻿using System;
+ using System.Collections.Generic;
 using FeedleDataTier.Models;
 
 namespace FeedleDataTier.Data
@@ -17,9 +18,9 @@ namespace FeedleDataTier.Data
 
         List<User> GetUsers();
 
-        void AddComment(Comment comment);
+        Comment AddComment(Comment comment);
 
-        void SendMessage(Message message);
+        Message SendMessage(Message message);
 
     }
 }
