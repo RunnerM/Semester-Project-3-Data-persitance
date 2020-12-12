@@ -27,5 +27,7 @@ using System.ComponentModel.DataAnnotations;
         public int Minute { get; set; }
         [JsonPropertyName("second")]
         public int Second { get; set; }
+        [JsonPropertyName("postId")]
+        public int PostId { get; set; }
     }
 }

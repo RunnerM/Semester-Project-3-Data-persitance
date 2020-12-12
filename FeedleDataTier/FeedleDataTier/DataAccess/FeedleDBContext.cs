@@ -1,4 +1,5 @@
-﻿﻿using FeedleDataTier.Models;
+﻿﻿using Feedle.Models;
+ using FeedleDataTier.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace FeedleDataTier.DataAccess
@@ -7,6 +8,16 @@ namespace FeedleDataTier.DataAccess
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Post> Posts { get; set; }
+        
+        public DbSet<UserFriend> UserFriends { get; set; }
+        
+        public DbSet<FriendRequestNotification> FriendRequestNotifications { get; set; }
+        
+        public DbSet<UserSubscription> UserSubscriptions { get; set; }
+
+        public DbSet<Conversation> Conversations { get; set; }
+        
+        public DbSet<UserConversation> UserConversations { get; set; }
         
         public DbSet<Comment> Comments { get; set; }
         

@@ -2,6 +2,6 @@
 {
     public enum RequestType
     {
-        PostUser, UpdateUser, GetUsers, DeleteUser, GetPosts, AddPost, DeletePost,UpdatePost,AddComment,SendMessage
+        PostUser, UpdateUser, GetUsers, DeleteUser, GetPosts, AddPost, DeletePost,UpdatePost,AddComment,DeleteComment,SendMessage,RespondToFriendRequest,SubscribeToUser,AddConversation,MakeFriendRequest,UnsubscribeRequest
     }
 }

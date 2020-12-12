@@ -1,0 +1,20 @@
+﻿using System.Text.Json.Serialization;
+using FeedleDataTier.Models;
+
+namespace FeedleDataTier.Network
+{
+    public class AddConversationRequest : Request
+    {
+        [JsonPropertyName("conversation")]
+        public Conversation Conversation { get; set; }
+        [JsonPropertyName("creatorId")]
+        public int CreatorId { get; set; }
+
+        public AddConversationRequest(Conversation conversation, int creatorId) : base(RequestType.AddConversation)
+        {
+            Conversation = conversation;
+            CreatorId = creatorId;
+        }
+        
+    }
+}

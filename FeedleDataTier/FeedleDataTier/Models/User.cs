@@ -22,8 +22,12 @@ using System.ComponentModel.DataAnnotations;
         public List<UserConversation> UserConversations { get; set; }
         [JsonPropertyName("securityLevel")]
         public int SecurityLevel { get; set; }
-        [JsonPropertyName("subscriptionUsersInformation")]
-        public List<UserInformation> SubscriptionUsersInformation { get; set; }
+        [JsonPropertyName("userSubscriptions")]
+        public List<UserSubscription> UserSubscriptions { get; set; }
+        [JsonPropertyName("userFriends")]
+        public List<UserFriend> UserFriends { get; set; }
+        [JsonPropertyName("friendRequestNotifications")]
+        public List<FriendRequestNotification> FriendRequestNotifications { get; set; }
         
     }
 }

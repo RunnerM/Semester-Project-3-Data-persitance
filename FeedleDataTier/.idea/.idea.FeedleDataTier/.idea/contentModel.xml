@@ -19,32 +19,40 @@
         <e p="Feedle.db" t="Include" />
         <e p="FeedleDataTier.csproj" t="IncludeRecursive" />
         <e p="Migrations" t="Include">
-          <e p="20201210172328_InitialCreate.cs" t="Include" />
-          <e p="20201210172328_InitialCreate.Designer.cs" t="Include" />
+          <e p="20201212200132_InitialCreate.cs" t="Include" />
+          <e p="20201212200132_InitialCreate.Designer.cs" t="Include" />
           <e p="FeedleDBContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="Comment.cs" t="Include" />
           <e p="Conversation.cs" t="Include" />
+          <e p="FriendRequestNotification.cs" t="Include" />
           <e p="Message.cs" t="Include" />
           <e p="Post.cs" t="Include" />
           <e p="User.cs" t="Include" />
           <e p="UserConversation.cs" t="Include" />
-          <e p="UserInformation.cs" t="Include" />
+          <e p="UserFriend.cs" t="Include" />
+          <e p="UserSubscription.cs" t="Include" />
         </e>
         <e p="Network" t="Include">
           <e p="AddCommentRequest.cs" t="Include" />
+          <e p="AddConversationRequest.cs" t="Include" />
           <e p="AddPostRequest.cs" t="Include" />
+          <e p="DeleteCommentRequest.cs" t="Include" />
           <e p="DeletePostRequest.cs" t="Include" />
           <e p="DeleteUserRequest.cs" t="Include" />
           <e p="GetPostsRequest.cs" t="Include" />
           <e p="GetPostsResponse.cs" t="Include" />
           <e p="GetUsersRequest.cs" t="Include" />
           <e p="GetUsersResponse.cs" t="Include" />
+          <e p="MakeFriendRequest.cs" t="Include" />
           <e p="PostUserRequest.cs" t="Include" />
           <e p="Request.cs" t="Include" />
           <e p="RequestType.cs" t="Include" />
+          <e p="RespondToFriendRequest.cs" t="Include" />
           <e p="SendMessageRequest.cs" t="Include" />
+          <e p="SubscribeToUserRequest.cs" t="Include" />
+          <e p="UnsubscribeRequest.cs" t="Include" />
           <e p="UpdatePostRequest.cs" t="Include" />
           <e p="UpdateUserRequest.cs" t="Include" />
         </e>

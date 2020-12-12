@@ -16,23 +16,23 @@ namespace FeedleDataTier.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("Feedle.Models.UserInformation", b =>
+            modelBuilder.Entity("Feedle.Models.UserSubscription", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("UserSubscriptionId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("SubscriptionId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("UserName")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
 
-                    b.HasKey("Id");
+                    b.HasKey("UserSubscriptionId");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserInformation");
+                    b.ToTable("UserSubscriptions");
                 });
 
             modelBuilder.Entity("FeedleDataTier.Models.Comment", b =>
@@ -59,7 +59,7 @@ namespace FeedleDataTier.Migrations
                     b.Property<int>("Month")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("PostId")
+                    b.Property<int>("PostId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Second")
@@ -87,9 +87,40 @@ namespace FeedleDataTier.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("WithWhomUserId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("ConversationId");
 
-                    b.ToTable("Conversation");
+                    b.ToTable("Conversations");
+                });
+
+            modelBuilder.Entity("FeedleDataTier.Models.FriendRequestNotification", b =>
+                {
+                    b.Property<int>("FriendRequestId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("CreatorId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PotentialFriendUserId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("PotentialFriendUserName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("FriendRequestId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("FriendRequestNotifications");
                 });
 
             modelBuilder.Entity("FeedleDataTier.Models.Message", b =>
@@ -216,21 +247,51 @@ namespace FeedleDataTier.Migrations
 
                     b.HasIndex("ConversationId");
 
-                    b.ToTable("UserConversation");
+                    b.ToTable("UserConversations");
                 });
 
-            modelBuilder.Entity("Feedle.Models.UserInformation", b =>
+            modelBuilder.Entity("FeedleDataTier.Models.UserFriend", b =>
+                {
+                    b.Property<int>("UserFriendId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("FriendId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("UserFriendId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserFriends");
+                });
+
+            modelBuilder.Entity("Feedle.Models.UserSubscription", b =>
                 {
                     b.HasOne("FeedleDataTier.Models.User", null)
-                        .WithMany("SubscriptionUsersInformation")
-                        .HasForeignKey("UserId");
+                        .WithMany("UserSubscriptions")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("FeedleDataTier.Models.Comment", b =>
                 {
                     b.HasOne("FeedleDataTier.Models.Post", null)
                         .WithMany("Comments")
-                        .HasForeignKey("PostId");
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("FeedleDataTier.Models.FriendRequestNotification", b =>
+                {
+                    b.HasOne("FeedleDataTier.Models.User", null)
+                        .WithMany("FriendRequestNotifications")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("FeedleDataTier.Models.Message", b =>
@@ -270,6 +331,15 @@ namespace FeedleDataTier.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("FeedleDataTier.Models.UserFriend", b =>
+                {
+                    b.HasOne("FeedleDataTier.Models.User", null)
+                        .WithMany("UserFriends")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("FeedleDataTier.Models.Conversation", b =>
                 {
                     b.Navigation("Messages");
@@ -284,11 +354,15 @@ namespace FeedleDataTier.Migrations
 
             modelBuilder.Entity("FeedleDataTier.Models.User", b =>
                 {
-                    b.Navigation("SubscriptionUsersInformation");
+                    b.Navigation("FriendRequestNotifications");
 
                     b.Navigation("UserConversations");
 
+                    b.Navigation("UserFriends");
+
                     b.Navigation("UserPosts");
+
+                    b.Navigation("UserSubscriptions");
                 });
 #pragma warning restore 612, 618
         }

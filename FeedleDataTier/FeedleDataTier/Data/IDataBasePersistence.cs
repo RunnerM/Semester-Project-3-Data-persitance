@@ -1,8 +1,10 @@
 ﻿﻿using System;
  using System.Collections.Generic;
-using FeedleDataTier.Models;
+ using Feedle.Models;
+ using FeedleDataTier.Models;
+ using FeedleDataTier.Network;
 
-namespace FeedleDataTier.Data
+ namespace FeedleDataTier.Data
 {
     public interface IDataBasePersistence
     {
@@ -21,6 +23,17 @@ namespace FeedleDataTier.Data
         Comment AddComment(Comment comment);
 
         Message SendMessage(Message message);
+
+        Conversation AddConversation(Conversation conversation, int creatorId);
+
+        int DeleteComment(int commentId);
+
+        FriendRequestNotification MakeFriendRequestNotification(FriendRequestNotification friendRequestNotification);
+
+        int RespondToFriendRequest(bool status,FriendRequestNotification friendRequestNotification);
+        UserSubscription SubscribeToUser(UserSubscription userSubscription);
+
+        int UnsubscribeFromUser(int subscriptionId);
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿﻿using System;
  using System.Collections.Generic;
  using System.Linq;
+ using Feedle.Models;
  using FeedleDataTier.DataAccess;
 using FeedleDataTier.Models;
  using FeedleDataTier.Network;
@@ -68,7 +69,15 @@ using FeedleDataTier.Models;
                 foreach (var user in users)
                 {
                     DataContext.Entry(user).Collection(u => u.UserConversations).Load();
-                    DataContext.Entry(user).Collection(u => u.SubscriptionUsersInformation).Load();
+                    foreach (var userConversation in user.UserConversations)
+                    {
+                        DataContext.Entry(userConversation).Reference(uc => uc.Conversation).Load();
+                        DataContext.Entry(userConversation.Conversation).Collection(ucc => ucc.Messages).Load();
+                    }
+
+                    DataContext.Entry(user).Collection(u => u.UserSubscriptions).Load();
+                    DataContext.Entry(user).Collection(u=>u.UserFriends).Load();
+                    DataContext.Entry(user).Collection(u=>u.FriendRequestNotifications).Load();
                     DataContext.Entry(user).Collection(u => u.UserPosts).Load();
                     foreach (var userPost in user.UserPosts)
                     {
@@ -115,6 +124,94 @@ using FeedleDataTier.Models;
             EntityEntry<Message> newlyAdded = DataContext.Messages.Add(message);
             DataContext.SaveChanges();
             return newlyAdded.Entity;
+        }
+
+        public Conversation AddConversation(Conversation conversation, int creatorId)
+        {
+            EntityEntry<Conversation> newlyAdded = DataContext.Conversations.Add(conversation);
+            UserConversation forCreator = new UserConversation();
+            UserConversation forParticipant = new UserConversation();
+            
+            forCreator.Conversation = conversation;
+            forParticipant.UserId = conversation.WithWhomUserId;
+            forCreator.ConversationId = conversation.ConversationId;
+            forCreator.UserId = creatorId;
+            conversation.WithWhomUserId = creatorId;
+            forParticipant.Conversation = conversation;
+            forParticipant.ConversationId = conversation.ConversationId;
+
+            EntityEntry<UserConversation> uc = DataContext.UserConversations.Add(forCreator);
+            EntityEntry<UserConversation> uc2 = DataContext.UserConversations.Add(forParticipant);
+
+            DataContext.SaveChanges();
+
+            return newlyAdded.Entity;
+        }
+
+        public int DeleteComment(int commentId)
+        {
+            var commentToRemove = DataContext.Comments.FirstOrDefault(comment => comment.CommentId == commentId);
+            if (commentToRemove != null)
+            {
+                DataContext.Comments.Remove(commentToRemove);
+                DataContext.SaveChanges();
+                return commentToRemove.CommentId;
+            }
+
+            return -1;
+        }
+
+        public FriendRequestNotification MakeFriendRequestNotification(
+            FriendRequestNotification friendRequestNotification)
+        {
+            EntityEntry<FriendRequestNotification> newlyAdded = DataContext.FriendRequestNotifications.Add(friendRequestNotification);
+            DataContext.SaveChanges();
+            return newlyAdded.Entity;
+        }
+
+        public int RespondToFriendRequest(bool status, FriendRequestNotification friendRequestNotification)
+        {
+            var toRemove = DataContext.FriendRequestNotifications.FirstOrDefault(f =>
+                    f.FriendRequestId == friendRequestNotification.FriendRequestId);
+                if (toRemove != null)
+                {
+                    DataContext.FriendRequestNotifications.Remove(toRemove);
+                    if (status)
+                    {
+                        UserFriend userFriendForCreator = new UserFriend();
+                        UserFriend userFriendForParticipant = new UserFriend();
+                        userFriendForCreator.FriendId = friendRequestNotification.PotentialFriendUserId;
+                        userFriendForCreator.UserId = friendRequestNotification.CreatorId;
+
+                        userFriendForParticipant.FriendId = friendRequestNotification.CreatorId;
+                        userFriendForParticipant.UserId = friendRequestNotification.PotentialFriendUserId;
+
+                        DataContext.UserFriends.Add(userFriendForCreator);
+                        DataContext.UserFriends.Add(userFriendForParticipant);
+                    }
+                    DataContext.SaveChanges();
+                }  
+            return friendRequestNotification.FriendRequestId;
+        }
+
+        public UserSubscription SubscribeToUser(UserSubscription userSubscription)
+        {
+            EntityEntry<UserSubscription> newlyAdded = DataContext.UserSubscriptions.Add(userSubscription);
+            DataContext.SaveChanges();
+            return newlyAdded.Entity;
+        }
+
+        public int UnsubscribeFromUser(int subscriptionId)
+        {
+            var toRemove = DataContext.UserSubscriptions.FirstOrDefault(u=>u.SubscriptionId == subscriptionId);
+            if (toRemove != null)
+            {
+                DataContext.UserSubscriptions.Remove(toRemove);
+                DataContext.SaveChanges();
+                return subscriptionId;
+            }
+
+            return -1;
         }
     }
 }

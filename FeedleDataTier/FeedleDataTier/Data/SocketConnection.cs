@@ -1,11 +1,13 @@
 ﻿﻿using System;
  using System.Collections.Generic;
+ using System.ComponentModel;
  using System.Net;
 using System.Net.Sockets;
  using System.Runtime.CompilerServices;
  using System.Text;
  using System.Text.Json;
  using System.Threading;
+ using Feedle.Models;
  using FeedleDataTier.Models;
  using FeedleDataTier.Network;
  using Microsoft.VisualBasic.CompilerServices;
@@ -184,6 +186,72 @@ using System.Net.Sockets;
                         byte[] toSendLenBytesMessage = BitConverter.GetBytes(toSendMessage);
                         client.Send(toSendLenBytesMessage);
                         client.Send(toSendBytesMessage);
+                        break;
+                    case RequestType.AddConversation:
+                        AddConversationRequest addConversation = JsonSerializer.Deserialize<AddConversationRequest>(message);
+                        Conversation newConversation = DbPersistence.AddConversation(addConversation.Conversation,addConversation.CreatorId);
+                        string responseMessageAddConversation =
+                            JsonSerializer.Serialize(new AddConversationRequest(newConversation,addConversation.CreatorId));
+                        int toSendAddConversation = Encoding.ASCII.GetByteCount(responseMessageAddConversation);
+                        byte[] toSendBytesAddConversation = Encoding.ASCII.GetBytes(responseMessageAddConversation);
+                        byte[] toSendLenBytesConversation = BitConverter.GetBytes(toSendAddConversation);
+                        client.Send(toSendLenBytesConversation);
+                        client.Send(toSendBytesAddConversation);
+                        break;
+                    case RequestType.DeleteComment:
+                        DeleteCommentRequest deleteCommentRequest = JsonSerializer.Deserialize<DeleteCommentRequest>(message);
+                        int deletedCommentId = DbPersistence.DeleteComment(deleteCommentRequest.CommentId);
+                        string responseMessageDeleteComment =
+                            JsonSerializer.Serialize(new DeleteCommentRequest(deletedCommentId));
+                        int toSendDeleteComment = Encoding.ASCII.GetByteCount(responseMessageDeleteComment);
+                        byte[] toSendBytesDeleteComment = Encoding.ASCII.GetBytes(responseMessageDeleteComment);
+                        byte[] toSendLenBytesDeleteComment = BitConverter.GetBytes(toSendDeleteComment);
+                        client.Send(toSendLenBytesDeleteComment);
+                        client.Send(toSendBytesDeleteComment);
+                        break;
+                    case RequestType.MakeFriendRequest:
+                        MakeFriendRequest makeFriendRequest = JsonSerializer.Deserialize<MakeFriendRequest>(message);
+                        FriendRequestNotification friendRequestNotification = DbPersistence.MakeFriendRequestNotification(makeFriendRequest.FriendRequestNotification);
+                        string responseMakeFriendRequest = 
+                            JsonSerializer.Serialize(new MakeFriendRequest(makeFriendRequest.FriendRequestNotification));
+                        int toSendMakeFriends = Encoding.ASCII.GetByteCount(responseMakeFriendRequest);
+                        byte[] toSendBytesMakeFriendRequest = Encoding.ASCII.GetBytes(responseMakeFriendRequest);
+                        byte[] toSendLenBytesMakeFriendRequest = BitConverter.GetBytes(toSendMakeFriends);
+                        client.Send(toSendLenBytesMakeFriendRequest);
+                        client.Send(toSendBytesMakeFriendRequest);
+                        break;
+                    case RequestType.RespondToFriendRequest:
+                        RespondToFriendRequest respondToFriendRequest= JsonSerializer.Deserialize<RespondToFriendRequest>(message);
+                        int respondToFriendRequestIndex = DbPersistence.RespondToFriendRequest(respondToFriendRequest.RespondStatus,respondToFriendRequest.FriendRequestNotification);
+                        string responseToFriendResponse = 
+                            JsonSerializer.Serialize(new RespondToFriendRequest(respondToFriendRequest.RespondStatus,respondToFriendRequest.FriendRequestNotification));
+                        int toSendRespondFriend = Encoding.ASCII.GetByteCount(responseToFriendResponse);
+                        byte[] toSendBytesRespondFriend = Encoding.ASCII.GetBytes(responseToFriendResponse);
+                        byte[] toSendLenBytesRespondFriend = BitConverter.GetBytes(toSendRespondFriend);
+                        client.Send(toSendLenBytesRespondFriend);
+                        client.Send(toSendBytesRespondFriend);
+                        break;
+                    case RequestType.SubscribeToUser:
+                        SubscribeToUserRequest subscribeToUserRequest = JsonSerializer.Deserialize<SubscribeToUserRequest>(message);
+                        UserSubscription userSubscription = DbPersistence.SubscribeToUser(subscribeToUserRequest.UserSubscription);
+                        string responseToSubscribeToUser =
+                            JsonSerializer.Serialize(new SubscribeToUserRequest(userSubscription));
+                        int toSendSubscribeToUser = Encoding.ASCII.GetByteCount(responseToSubscribeToUser);
+                        byte[] toSendBytesSubscribeToUser = Encoding.ASCII.GetBytes(responseToSubscribeToUser);
+                        byte[] toSendLenBytesSubscribeToUser = BitConverter.GetBytes(toSendSubscribeToUser);
+                        client.Send(toSendLenBytesSubscribeToUser);
+                        client.Send(toSendBytesSubscribeToUser);
+                        break;
+                    case RequestType.UnsubscribeRequest:
+                        UnsubscribeRequest unsubscribeRequest = JsonSerializer.Deserialize<UnsubscribeRequest>(message);
+                        int unSubIndex = DbPersistence.UnsubscribeFromUser(unsubscribeRequest.SubscriptionId);
+                        string responseUnsubscribe = 
+                            JsonSerializer.Serialize(new UnsubscribeRequest(unSubIndex));
+                        int toSendUnSub = Encoding.ASCII.GetByteCount(responseUnsubscribe);
+                        byte[] toSendBytesUnsubscribe = Encoding.ASCII.GetBytes(responseUnsubscribe);
+                        byte[] toSendLenBytesUnsubscribe = BitConverter.GetBytes(toSendUnSub);
+                        client.Send(toSendLenBytesUnsubscribe);
+                        client.Send(toSendBytesUnsubscribe);
                         break;
                 }
                 

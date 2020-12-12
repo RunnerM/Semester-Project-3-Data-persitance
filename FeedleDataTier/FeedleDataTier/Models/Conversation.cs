@@ -15,5 +15,8 @@ using System.ComponentModel.DataAnnotations;
         public List<Message> Messages { get; set; }
         [JsonPropertyName("userConversations")]
         public List<UserConversation> UserConversations { get; set; }
+
+        [JsonPropertyName("withWhomUserId")]
+        public int WithWhomUserId { get; set; }
     }
 }
