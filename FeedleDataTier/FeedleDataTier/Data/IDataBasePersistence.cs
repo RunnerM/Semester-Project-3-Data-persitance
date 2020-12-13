@@ -24,13 +24,13 @@
 
         Message SendMessage(Message message);
 
-        Conversation AddConversation(Conversation conversation, int creatorId);
+        List<UserConversation> AddConversation(Conversation conversation, int creatorId, int withWhomId);
 
         int DeleteComment(int commentId);
 
         FriendRequestNotification MakeFriendRequestNotification(FriendRequestNotification friendRequestNotification);
 
-        int RespondToFriendRequest(bool status,FriendRequestNotification friendRequestNotification);
+        List<UserFriend> RespondToFriendRequest(bool status,FriendRequestNotification friendRequestNotification);
         UserSubscription SubscribeToUser(UserSubscription userSubscription);
 
         int UnsubscribeFromUser(int subscriptionId);

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FeedleDataTier.Migrations
 {
     [DbContext(typeof(FeedleDBContext))]
-    [Migration("20201212200132_InitialCreate")]
+    [Migration("20201213205334_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -88,9 +88,6 @@ namespace FeedleDataTier.Migrations
 
                     b.Property<string>("Title")
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("WithWhomUserId")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("ConversationId");
 
@@ -243,6 +240,9 @@ namespace FeedleDataTier.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("ConversationId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("WithWhomId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("UserId", "ConversationId");

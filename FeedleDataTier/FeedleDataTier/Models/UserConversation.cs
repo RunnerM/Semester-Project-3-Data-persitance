@@ -13,7 +13,10 @@ namespace FeedleDataTier.Models
         public User User { get; set; }
         [JsonPropertyName("conversation")]
         public Conversation Conversation { get; set; }
-        
-        
+
+        [JsonPropertyName("withWhomId")]
+        public int WithWhomId { get; set; }
+
+
     }
 }

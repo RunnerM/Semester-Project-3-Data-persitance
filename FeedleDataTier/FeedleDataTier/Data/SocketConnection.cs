@@ -189,9 +189,10 @@ using System.Net.Sockets;
                         break;
                     case RequestType.AddConversation:
                         AddConversationRequest addConversation = JsonSerializer.Deserialize<AddConversationRequest>(message);
-                        Conversation newConversation = DbPersistence.AddConversation(addConversation.Conversation,addConversation.CreatorId);
+                        List<UserConversation
+                        > newUserConversations = DbPersistence.AddConversation(addConversation.Conversation,addConversation.CreatorId,addConversation.WithWhomId);
                         string responseMessageAddConversation =
-                            JsonSerializer.Serialize(new AddConversationRequest(newConversation,addConversation.CreatorId));
+                            JsonSerializer.Serialize(new AddConversationResponse(newUserConversations));
                         int toSendAddConversation = Encoding.ASCII.GetByteCount(responseMessageAddConversation);
                         byte[] toSendBytesAddConversation = Encoding.ASCII.GetBytes(responseMessageAddConversation);
                         byte[] toSendLenBytesConversation = BitConverter.GetBytes(toSendAddConversation);
@@ -222,9 +223,9 @@ using System.Net.Sockets;
                         break;
                     case RequestType.RespondToFriendRequest:
                         RespondToFriendRequest respondToFriendRequest= JsonSerializer.Deserialize<RespondToFriendRequest>(message);
-                        int respondToFriendRequestIndex = DbPersistence.RespondToFriendRequest(respondToFriendRequest.RespondStatus,respondToFriendRequest.FriendRequestNotification);
+                        List<UserFriend> userFriends = DbPersistence.RespondToFriendRequest(respondToFriendRequest.RespondStatus,respondToFriendRequest.FriendRequestNotification);
                         string responseToFriendResponse = 
-                            JsonSerializer.Serialize(new RespondToFriendRequest(respondToFriendRequest.RespondStatus,respondToFriendRequest.FriendRequestNotification));
+                            JsonSerializer.Serialize(new RespondToFriendResponse(userFriends));
                         int toSendRespondFriend = Encoding.ASCII.GetByteCount(responseToFriendResponse);
                         byte[] toSendBytesRespondFriend = Encoding.ASCII.GetBytes(responseToFriendResponse);
                         byte[] toSendLenBytesRespondFriend = BitConverter.GetBytes(toSendRespondFriend);

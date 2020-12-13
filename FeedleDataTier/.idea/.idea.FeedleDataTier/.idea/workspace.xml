@@ -23,37 +23,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99ca3e0d-8e77-48e3-a9bd-283121164c9a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Models/FriendRequestNotification.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Models/UserFriend.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/AddConversationRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/DeleteCommentRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/MakeFriendRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/RespondToFriendRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/SubscribeToUserRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/UnsubscribeRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/AddConversationResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/RespondToFriendResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/Data/IDataBasePersistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Data/IDataBasePersistence.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/DataAccess/FeedleDBContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/DataAccess/FeedleDBContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Feedle.db" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Feedle.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Feedle.db-shm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Feedle.db-wal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Migrations/20201210172328_InitialCreate.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Migrations/20201210172328_InitialCreate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Migrations/FeedleDBContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Migrations/FeedleDBContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/Comment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Feedle.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Feedle.db-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/Conversation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/Conversation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/FriendRequestNotification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/FriendRequestNotification.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/UserConversation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/UserConversation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/UserInformation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/UserSubscription.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Network/AddConversationRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Network/AddConversationRequest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/Network/RequestType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Network/RequestType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,27 +76,32 @@
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/SimpleTextNotification.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/Notification.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/Friend.cs" />
-        <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserConversation.cs" />
-        <option value="$PROJECT_DIR$/FeedleDataTier/Models/Conversation.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/DeleteComment.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/User.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/SubscribeToUser.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/AddConversation.cs" />
-        <option value="$PROJECT_DIR$/FeedleDataTier/Network/RequestType.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/DataAccess/FeedleDBContext.cs" />
-        <option value="$PROJECT_DIR$/FeedleDataTier/Models/FriendRequestNotification.cs" />
-        <option value="$PROJECT_DIR$/FeedleDataTier/Data/IDataBasePersistence.cs" />
-        <option value="$PROJECT_DIR$/FeedleDataTier/Network/AddConversationRequest.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/DeleteCommentRequest.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/MakeFriendRequest.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/RespondToFriendRequest.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/SubscribeToUserRequest.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/Comment.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/UnsubscribeRequest.cs" />
-        <option value="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" />
-        <option value="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserSubscription.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserFriend.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Models/FriendRequestNotification.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserCoversationParticipantsReference.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserConversationParticipantsReference.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Models/Conversation.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserConversation.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Network/AddConversationRequest.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Network/AddCoversationResponse.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Network/AddConversationResponse.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Data/IDataBasePersistence.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Network/RequestType.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Network/RespondToFriendResponse.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" />
       </list>
     </option>
   </component>
@@ -177,7 +164,8 @@
       <workItem from="1607595304191" duration="19135000" />
       <workItem from="1607622992837" duration="1048000" />
       <workItem from="1607697064062" duration="10210000" />
-      <workItem from="1607788756454" duration="14194000" />
+      <workItem from="1607788756454" duration="14635000" />
+      <workItem from="1607875243782" duration="10429000" />
     </task>
     <servers />
   </component>
@@ -206,26 +194,26 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="617" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1607281758022" />
-    <state width="2005" height="183" key="GridCell.Tab.0.bottom" timestamp="1607714647162">
+    <state width="2005" height="117" key="GridCell.Tab.0.bottom" timestamp="1607810927188">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1493" height="183" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607624505559" />
-    <state width="2005" height="183" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1607714647162" />
-    <state width="2005" height="183" key="GridCell.Tab.0.center" timestamp="1607714647162">
+    <state width="1493" height="117" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607803707106" />
+    <state width="2005" height="117" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1607810927188" />
+    <state width="2005" height="117" key="GridCell.Tab.0.center" timestamp="1607810927188">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1493" height="183" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607624505559" />
-    <state width="2005" height="183" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1607714647162" />
-    <state width="2005" height="183" key="GridCell.Tab.0.left" timestamp="1607714647162">
+    <state width="1493" height="117" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607803707106" />
+    <state width="2005" height="117" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1607810927188" />
+    <state width="2005" height="117" key="GridCell.Tab.0.left" timestamp="1607810927188">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1493" height="183" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607624505559" />
-    <state width="2005" height="183" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1607714647162" />
-    <state width="2005" height="183" key="GridCell.Tab.0.right" timestamp="1607714647162">
+    <state width="1493" height="117" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607803707106" />
+    <state width="2005" height="117" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1607810927188" />
+    <state width="2005" height="117" key="GridCell.Tab.0.right" timestamp="1607810927188">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1493" height="183" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607624505559" />
-    <state width="2005" height="183" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1607714647162" />
+    <state width="1493" height="117" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607803707106" />
+    <state width="2005" height="117" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1607810927188" />
     <state width="2005" height="402" key="GridCell.Tab.1.bottom" timestamp="1607465503220">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -315,9 +303,9 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="681" y="259" key="run.anything.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1607289485724" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607795801837">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607884925357">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607795801837" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607884925357" />
   </component>
 </project>

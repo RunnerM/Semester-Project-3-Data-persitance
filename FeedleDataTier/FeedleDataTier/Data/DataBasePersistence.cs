@@ -126,26 +126,35 @@ using FeedleDataTier.Models;
             return newlyAdded.Entity;
         }
 
-        public Conversation AddConversation(Conversation conversation, int creatorId)
+        public List<UserConversation> AddConversation(Conversation conversation, int creatorId, int withWhomId)
         {
             EntityEntry<Conversation> newlyAdded = DataContext.Conversations.Add(conversation);
             UserConversation forCreator = new UserConversation();
             UserConversation forParticipant = new UserConversation();
             
             forCreator.Conversation = conversation;
-            forParticipant.UserId = conversation.WithWhomUserId;
-            forCreator.ConversationId = conversation.ConversationId;
-            forCreator.UserId = creatorId;
-            conversation.WithWhomUserId = creatorId;
             forParticipant.Conversation = conversation;
+
+            forCreator.WithWhomId = withWhomId;
+            forCreator.UserId = creatorId;
+
+            forCreator.ConversationId = conversation.ConversationId;
             forParticipant.ConversationId = conversation.ConversationId;
+
+            forParticipant.WithWhomId = creatorId;
+            forParticipant.UserId = withWhomId;
 
             EntityEntry<UserConversation> uc = DataContext.UserConversations.Add(forCreator);
             EntityEntry<UserConversation> uc2 = DataContext.UserConversations.Add(forParticipant);
-
             DataContext.SaveChanges();
+            
+            List<UserConversation> userConversations = new List<UserConversation>();
+            
+            userConversations.Add(uc.Entity);
+            userConversations.Add(uc2.Entity);
 
-            return newlyAdded.Entity;
+            
+            return userConversations;
         }
 
         public int DeleteComment(int commentId)
@@ -169,7 +178,7 @@ using FeedleDataTier.Models;
             return newlyAdded.Entity;
         }
 
-        public int RespondToFriendRequest(bool status, FriendRequestNotification friendRequestNotification)
+        public List<UserFriend> RespondToFriendRequest(bool status, FriendRequestNotification friendRequestNotification)
         {
             var toRemove = DataContext.FriendRequestNotifications.FirstOrDefault(f =>
                     f.FriendRequestId == friendRequestNotification.FriendRequestId);
@@ -186,12 +195,21 @@ using FeedleDataTier.Models;
                         userFriendForParticipant.FriendId = friendRequestNotification.CreatorId;
                         userFriendForParticipant.UserId = friendRequestNotification.PotentialFriendUserId;
 
-                        DataContext.UserFriends.Add(userFriendForCreator);
-                        DataContext.UserFriends.Add(userFriendForParticipant);
+                        EntityEntry<UserFriend> userFriendCreator = DataContext.UserFriends.Add(userFriendForCreator);
+                        EntityEntry<UserFriend> userFriendPart = DataContext.UserFriends.Add(userFriendForParticipant);
+                        
+                        DataContext.SaveChanges();
+                        
+                        List<UserFriend> userFriends = new List<UserFriend>();
+                        
+                        userFriends.Add(userFriendCreator.Entity);
+                        userFriends.Add(userFriendPart.Entity);
+
+                        return userFriends;
                     }
-                    DataContext.SaveChanges();
                 }  
-            return friendRequestNotification.FriendRequestId;
+                return null;
+           
         }
 
         public UserSubscription SubscribeToUser(UserSubscription userSubscription)
@@ -203,7 +221,7 @@ using FeedleDataTier.Models;
 
         public int UnsubscribeFromUser(int subscriptionId)
         {
-            var toRemove = DataContext.UserSubscriptions.FirstOrDefault(u=>u.SubscriptionId == subscriptionId);
+            var toRemove = DataContext.UserSubscriptions.FirstOrDefault(u=>u.UserSubscriptionId == subscriptionId);
             if (toRemove != null)
             {
                 DataContext.UserSubscriptions.Remove(toRemove);

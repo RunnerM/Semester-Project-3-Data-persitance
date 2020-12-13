@@ -87,9 +87,6 @@ namespace FeedleDataTier.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("WithWhomUserId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("ConversationId");
 
                     b.ToTable("Conversations");
@@ -241,6 +238,9 @@ namespace FeedleDataTier.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("ConversationId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("WithWhomId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("UserId", "ConversationId");

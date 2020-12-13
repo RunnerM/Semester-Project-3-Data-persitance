@@ -12,8 +12,7 @@ namespace FeedleDataTier.Migrations
                 {
                     ConversationId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Title = table.Column<string>(type: "TEXT", nullable: true),
-                    WithWhomUserId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Title = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -121,7 +120,8 @@ namespace FeedleDataTier.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<int>(type: "INTEGER", nullable: false),
-                    ConversationId = table.Column<int>(type: "INTEGER", nullable: false)
+                    ConversationId = table.Column<int>(type: "INTEGER", nullable: false),
+                    WithWhomId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -8,9 +8,11 @@ namespace FeedleDataTier.Models
         [Key]
         [JsonPropertyName("friendRequestId")]
         public int FriendRequestId { get; set; }
-        [JsonPropertyName("potentialFriendUserId")]
+        
+        [JsonPropertyName("creatorId")]
         
         public int CreatorId { get; set; }
+        [JsonPropertyName("potentialFriendUserId")]
         public int PotentialFriendUserId { get; set; }
         [JsonPropertyName("content")]
         public string Content { get; set; }
