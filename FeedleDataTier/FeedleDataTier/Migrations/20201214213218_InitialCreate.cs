@@ -69,10 +69,11 @@ namespace FeedleDataTier.Migrations
                     FriendRequestId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     CreatorId = table.Column<int>(type: "INTEGER", nullable: false),
+                    UserId = table.Column<int>(type: "INTEGER", nullable: false),
+                    CreatorUserName = table.Column<string>(type: "TEXT", nullable: true),
                     PotentialFriendUserId = table.Column<int>(type: "INTEGER", nullable: false),
                     Content = table.Column<string>(type: "TEXT", nullable: true),
-                    PotentialFriendUserName = table.Column<string>(type: "TEXT", nullable: true),
-                    UserId = table.Column<int>(type: "INTEGER", nullable: true)
+                    PotentialFriendUserName = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -82,7 +83,7 @@ namespace FeedleDataTier.Migrations
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

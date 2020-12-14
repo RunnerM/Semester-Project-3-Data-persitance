@@ -190,9 +190,9 @@ using FeedleDataTier.Models;
                         UserFriend userFriendForCreator = new UserFriend();
                         UserFriend userFriendForParticipant = new UserFriend();
                         userFriendForCreator.FriendId = friendRequestNotification.PotentialFriendUserId;
-                        userFriendForCreator.UserId = friendRequestNotification.CreatorId;
+                        userFriendForCreator.UserId = friendRequestNotification.UserId;
 
-                        userFriendForParticipant.FriendId = friendRequestNotification.CreatorId;
+                        userFriendForParticipant.FriendId = friendRequestNotification.UserId;
                         userFriendForParticipant.UserId = friendRequestNotification.PotentialFriendUserId;
 
                         EntityEntry<UserFriend> userFriendCreator = DataContext.UserFriends.Add(userFriendForCreator);

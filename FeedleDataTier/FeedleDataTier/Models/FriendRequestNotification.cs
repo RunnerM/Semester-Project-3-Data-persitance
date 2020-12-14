@@ -10,8 +10,11 @@ namespace FeedleDataTier.Models
         public int FriendRequestId { get; set; }
         
         [JsonPropertyName("creatorId")]
-        
         public int CreatorId { get; set; }
+        [JsonPropertyName("userId")]
+        public int UserId { get; set; }
+        [JsonPropertyName("creatorUserName")]
+        public string CreatorUserName { get; set; }
         [JsonPropertyName("potentialFriendUserId")]
         public int PotentialFriendUserId { get; set; }
         [JsonPropertyName("content")]

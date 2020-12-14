@@ -214,7 +214,7 @@ using System.Net.Sockets;
                         MakeFriendRequest makeFriendRequest = JsonSerializer.Deserialize<MakeFriendRequest>(message);
                         FriendRequestNotification friendRequestNotification = DbPersistence.MakeFriendRequestNotification(makeFriendRequest.FriendRequestNotification);
                         string responseMakeFriendRequest = 
-                            JsonSerializer.Serialize(new MakeFriendRequest(makeFriendRequest.FriendRequestNotification));
+                            JsonSerializer.Serialize(new MakeFriendRequest(friendRequestNotification));
                         int toSendMakeFriends = Encoding.ASCII.GetByteCount(responseMakeFriendRequest);
                         byte[] toSendBytesMakeFriendRequest = Encoding.ASCII.GetBytes(responseMakeFriendRequest);
                         byte[] toSendLenBytesMakeFriendRequest = BitConverter.GetBytes(toSendMakeFriends);
