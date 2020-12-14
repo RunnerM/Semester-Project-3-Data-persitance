@@ -12,5 +12,7 @@ namespace FeedleDataTier.Models
         public int UserId { get; set; }
         [JsonPropertyName("friendId")]
         public int FriendId { get; set; }
+        [JsonPropertyName("userName")]
+        public string UserName { get; set; }
     }
 }
