@@ -23,19 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99ca3e0d-8e77-48e3-a9bd-283121164c9a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/AddConversationResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FeedleDataTier/Network/RespondToFriendResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Data/IDataBasePersistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Data/IDataBasePersistence.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Feedle.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Feedle.db-wal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/Conversation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/Conversation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/FriendRequestNotification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/FriendRequestNotification.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/UserConversation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/UserConversation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Network/AddConversationRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Network/AddConversationRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Network/RequestType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Network/RequestType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Feedle.db-shm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Feedle.db-wal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/UserSubscription.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/UserSubscription.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +79,6 @@
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/SubscribeToUserRequest.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/Comment.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/UnsubscribeRequest.cs" />
-        <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserSubscription.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserFriend.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/FriendRequestNotification.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserCoversationParticipantsReference.cs" />
@@ -102,6 +93,7 @@
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/RespondToFriendResponse.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserSubscription.cs" />
       </list>
     </option>
   </component>
@@ -165,7 +157,8 @@
       <workItem from="1607622992837" duration="1048000" />
       <workItem from="1607697064062" duration="10210000" />
       <workItem from="1607788756454" duration="14635000" />
-      <workItem from="1607875243782" duration="10429000" />
+      <workItem from="1607875243782" duration="11125000" />
+      <workItem from="1607934899545" duration="2753000" />
     </task>
     <servers />
   </component>

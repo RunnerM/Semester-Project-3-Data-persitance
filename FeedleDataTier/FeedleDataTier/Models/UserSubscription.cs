@@ -12,5 +12,7 @@ namespace Feedle.Models
         public int UserId { get; set; }
         [JsonPropertyName("subscriptionId")]
         public int SubscriptionId { get; set; }
+        [JsonPropertyName("userName")]
+        public string UserName { get; set; }
     }
 }
