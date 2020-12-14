@@ -28,6 +28,9 @@ namespace FeedleDataTier.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("UserName")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("UserSubscriptionId");
 
                     b.HasIndex("UserId");
@@ -261,6 +264,9 @@ namespace FeedleDataTier.Migrations
 
                     b.Property<int>("UserId")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("UserFriendId");
 

@@ -147,7 +147,8 @@ namespace FeedleDataTier.Migrations
                     UserFriendId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     UserId = table.Column<int>(type: "INTEGER", nullable: false),
-                    FriendId = table.Column<int>(type: "INTEGER", nullable: false)
+                    FriendId = table.Column<int>(type: "INTEGER", nullable: false),
+                    UserName = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -167,7 +168,8 @@ namespace FeedleDataTier.Migrations
                     UserSubscriptionId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     UserId = table.Column<int>(type: "INTEGER", nullable: false),
-                    SubscriptionId = table.Column<int>(type: "INTEGER", nullable: false)
+                    SubscriptionId = table.Column<int>(type: "INTEGER", nullable: false),
+                    UserName = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
