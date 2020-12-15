@@ -8,7 +8,7 @@ namespace FeedleDataTier.Network
         public int SubscriptionId { get; set; }
         public UnsubscribeRequest(int subscriptionId) : base(RequestType.UnsubscribeRequest)
         {
-            SubscriptionId = SubscriptionId;
+            SubscriptionId = subscriptionId;
         }
     }
 }

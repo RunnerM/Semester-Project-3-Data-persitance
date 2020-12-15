@@ -223,7 +223,9 @@ using System.Net.Sockets;
                         break;
                     case RequestType.RespondToFriendRequest:
                         RespondToFriendRequest respondToFriendRequest= JsonSerializer.Deserialize<RespondToFriendRequest>(message);
+                        Console.WriteLine(respondToFriendRequest.RespondStatus);
                         List<UserFriend> userFriends = DbPersistence.RespondToFriendRequest(respondToFriendRequest.RespondStatus,respondToFriendRequest.FriendRequestNotification);
+                        Console.WriteLine(userFriends.Count);
                         string responseToFriendResponse = 
                             JsonSerializer.Serialize(new RespondToFriendResponse(userFriends));
                         int toSendRespondFriend = Encoding.ASCII.GetByteCount(responseToFriendResponse);
@@ -245,6 +247,7 @@ using System.Net.Sockets;
                         break;
                     case RequestType.UnsubscribeRequest:
                         UnsubscribeRequest unsubscribeRequest = JsonSerializer.Deserialize<UnsubscribeRequest>(message);
+                        Console.WriteLine(unsubscribeRequest.SubscriptionId);
                         int unSubIndex = DbPersistence.UnsubscribeFromUser(unsubscribeRequest.SubscriptionId);
                         string responseUnsubscribe = 
                             JsonSerializer.Serialize(new UnsubscribeRequest(unSubIndex));

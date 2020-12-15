@@ -6,7 +6,7 @@ namespace FeedleDataTier.Network
 {
     public class RespondToFriendResponse : Request
     {
-        [JsonPropertyName("userFriend")]
+        [JsonPropertyName("userFriends")]
         public List<UserFriend> UserFriends { get; set; }
         public RespondToFriendResponse(List<UserFriend> userFriends) : base(RequestType.RespondToFriendResponse)
         {

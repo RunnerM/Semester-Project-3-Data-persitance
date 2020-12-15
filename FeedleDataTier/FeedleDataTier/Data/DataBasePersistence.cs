@@ -182,6 +182,7 @@ using FeedleDataTier.Models;
         {
             var toRemove = DataContext.FriendRequestNotifications.FirstOrDefault(f =>
                     f.FriendRequestId == friendRequestNotification.FriendRequestId);
+            List<UserFriend> userFriends = new List<UserFriend>();
                 if (toRemove != null)
                 {
                     DataContext.FriendRequestNotifications.Remove(toRemove);
@@ -200,13 +201,13 @@ using FeedleDataTier.Models;
                         
                         DataContext.SaveChanges();
                         
-                        List<UserFriend> userFriends = new List<UserFriend>();
-                        
                         userFriends.Add(userFriendCreator.Entity);
                         userFriends.Add(userFriendPart.Entity);
+                        Console.WriteLine(userFriends.Count);
 
                         return userFriends;
                     }
+                    DataContext.SaveChanges();
                 }  
                 return null;
            
@@ -221,7 +222,9 @@ using FeedleDataTier.Models;
 
         public int UnsubscribeFromUser(int subscriptionId)
         {
-            var toRemove = DataContext.UserSubscriptions.FirstOrDefault(u=>u.UserSubscriptionId == subscriptionId);
+            Console.WriteLine(subscriptionId);
+            var toRemove = DataContext.UserSubscriptions.FirstOrDefault(u=>u.SubscriptionId == subscriptionId);
+            Console.WriteLine(toRemove);
             if (toRemove != null)
             {
                 DataContext.UserSubscriptions.Remove(toRemove);
