@@ -174,7 +174,9 @@ using FeedleDataTier.Models;
             FriendRequestNotification friendRequestNotification)
         {
             EntityEntry<FriendRequestNotification> newlyAdded = DataContext.FriendRequestNotifications.Add(friendRequestNotification);
+            Console.WriteLine(newlyAdded.Entity.FriendRequestId);
             DataContext.SaveChanges();
+            Console.WriteLine(newlyAdded.Entity.FriendRequestId);
             return newlyAdded.Entity;
         }
 
@@ -182,10 +184,14 @@ using FeedleDataTier.Models;
         {
             var toRemove = DataContext.FriendRequestNotifications.FirstOrDefault(f =>
                     f.FriendRequestId == friendRequestNotification.FriendRequestId);
+            var echoToRemove = DataContext.FriendRequestNotifications.FirstOrDefault(f =>
+                f.CreatorId == friendRequestNotification.CreatorId &&
+                f.UserId == friendRequestNotification.PotentialFriendUserId);
             List<UserFriend> userFriends = new List<UserFriend>();
-                if (toRemove != null)
+                if (toRemove != null && echoToRemove != null)
                 {
                     DataContext.FriendRequestNotifications.Remove(toRemove);
+                    DataContext.FriendRequestNotifications.Remove(echoToRemove);
                     if (status)
                     {
                         UserFriend userFriendForCreator = new UserFriend();
@@ -203,7 +209,6 @@ using FeedleDataTier.Models;
                         
                         userFriends.Add(userFriendCreator.Entity);
                         userFriends.Add(userFriendPart.Entity);
-                        Console.WriteLine(userFriends.Count);
 
                         return userFriends;
                     }

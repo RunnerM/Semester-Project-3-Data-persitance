@@ -213,6 +213,7 @@ using System.Net.Sockets;
                     case RequestType.MakeFriendRequest:
                         MakeFriendRequest makeFriendRequest = JsonSerializer.Deserialize<MakeFriendRequest>(message);
                         FriendRequestNotification friendRequestNotification = DbPersistence.MakeFriendRequestNotification(makeFriendRequest.FriendRequestNotification);
+                        Console.WriteLine(friendRequestNotification.FriendRequestId);
                         string responseMakeFriendRequest = 
                             JsonSerializer.Serialize(new MakeFriendRequest(friendRequestNotification));
                         int toSendMakeFriends = Encoding.ASCII.GetByteCount(responseMakeFriendRequest);
@@ -223,7 +224,6 @@ using System.Net.Sockets;
                         break;
                     case RequestType.RespondToFriendRequest:
                         RespondToFriendRequest respondToFriendRequest= JsonSerializer.Deserialize<RespondToFriendRequest>(message);
-                        Console.WriteLine(respondToFriendRequest.RespondStatus);
                         List<UserFriend> userFriends = DbPersistence.RespondToFriendRequest(respondToFriendRequest.RespondStatus,respondToFriendRequest.FriendRequestNotification);
                         Console.WriteLine(userFriends.Count);
                         string responseToFriendResponse = 
