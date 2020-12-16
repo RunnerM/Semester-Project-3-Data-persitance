@@ -16,7 +16,7 @@ namespace FeedleDataTier.Network
         {
             Conversation = conversation;
             CreatorId = creatorId;
-            WithWhomId = WithWhomId;
+            WithWhomId = withWhom;
         }
         
     }

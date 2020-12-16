@@ -7,6 +7,7 @@ using FeedleDataTier.Models;
  using FeedleDataTier.Network;
  using Microsoft.EntityFrameworkCore;
  using Microsoft.EntityFrameworkCore.ChangeTracking;
+ using Npgsql.EntityFrameworkCore.PostgreSQL.Query.Expressions.Internal;
 
  namespace FeedleDataTier.Data
 {
@@ -21,13 +22,38 @@ using FeedleDataTier.Models;
 
         public void UpdateUser(User user)
         {
-            DataContext.Users.Update(user);
+            bool tracking = DataContext.ChangeTracker.Entries<User>().Any(x => x.Entity.Id == user.Id);
+            if (!tracking)
+            {
+                DataContext.Users.Update(user);
+            }
+            else
+            {
+                var userToUpdate = DataContext.Users.FirstOrDefault(u => u.Id == user.Id);
+                if (userToUpdate!=null)
+                {
+                    userToUpdate.Password = user.Password;
+                    userToUpdate.UserImageSrc = user.UserImageSrc; 
+                }
+            }
             DataContext.SaveChanges();
         }
 
         public void UpdatePost(Post post)
         {
-            DataContext.Update(post);
+            bool tracking = DataContext.ChangeTracker.Entries<Post>().Any(x => x.Entity.PostId == post.PostId);
+            if (!tracking)
+            {
+                DataContext.Update(post);
+            }
+
+            var postToUpdate = DataContext.Posts.FirstOrDefault(p => p.PostId == post.PostId);
+            if (postToUpdate!= null)
+            {
+                postToUpdate.Title = post.Title;
+                postToUpdate.Content = post.Content;
+                postToUpdate.PostImageSrc = post.PostImageSrc;
+            }
             DataContext.SaveChanges();
         }
 
@@ -129,11 +155,12 @@ using FeedleDataTier.Models;
         public List<UserConversation> AddConversation(Conversation conversation, int creatorId, int withWhomId)
         {
             EntityEntry<Conversation> newlyAdded = DataContext.Conversations.Add(conversation);
+            DataContext.SaveChanges();
             UserConversation forCreator = new UserConversation();
             UserConversation forParticipant = new UserConversation();
             
-            forCreator.Conversation = conversation;
-            forParticipant.Conversation = conversation;
+            forCreator.Conversation = newlyAdded.Entity;
+            forParticipant.Conversation = newlyAdded.Entity;
 
             forCreator.WithWhomId = withWhomId;
             forCreator.UserId = creatorId;
@@ -143,6 +170,7 @@ using FeedleDataTier.Models;
 
             forParticipant.WithWhomId = creatorId;
             forParticipant.UserId = withWhomId;
+            
 
             EntityEntry<UserConversation> uc = DataContext.UserConversations.Add(forCreator);
             EntityEntry<UserConversation> uc2 = DataContext.UserConversations.Add(forParticipant);
