@@ -23,6 +23,8 @@ namespace FeedleDataTier.DataAccess
         
         public DbSet<Message> Messages { get; set; }
         
+        public DbSet<PostReaction> PostReactions { get; set; }
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseNpgsql("Host=localhost;Database=Feedle_db;Username=postgres;Password=3228");

@@ -30,12 +30,13 @@ using FeedleDataTier.Models;
             else
             {
                 var userToUpdate = DataContext.Users.FirstOrDefault(u => u.Id == user.Id);
-                if (userToUpdate!=null)
+                if (userToUpdate != null)
                 {
                     userToUpdate.Password = user.Password;
-                    userToUpdate.UserImageSrc = user.UserImageSrc; 
+                    userToUpdate.UserImageSrc = user.UserImageSrc;
                 }
             }
+
             DataContext.SaveChanges();
         }
 
@@ -48,12 +49,13 @@ using FeedleDataTier.Models;
             }
 
             var postToUpdate = DataContext.Posts.FirstOrDefault(p => p.PostId == post.PostId);
-            if (postToUpdate!= null)
+            if (postToUpdate != null)
             {
                 postToUpdate.Title = post.Title;
                 postToUpdate.Content = post.Content;
                 postToUpdate.PostImageSrc = post.PostImageSrc;
             }
+
             DataContext.SaveChanges();
         }
 
@@ -78,14 +80,15 @@ using FeedleDataTier.Models;
                 var posts = DataContext.Posts.ToList();
                 foreach (var post in posts)
                 {
-                    DataContext.Entry(post).Collection(p=>p.Comments).Load();
+                    DataContext.Entry(post).Collection(p => p.Comments).Load();
                 }
+
                 return posts;
             }
 
             return null;
         }
-        
+
 
         public List<User> GetUsers()
         {
@@ -102,8 +105,8 @@ using FeedleDataTier.Models;
                     }
 
                     DataContext.Entry(user).Collection(u => u.UserSubscriptions).Load();
-                    DataContext.Entry(user).Collection(u=>u.UserFriends).Load();
-                    DataContext.Entry(user).Collection(u=>u.FriendRequestNotifications).Load();
+                    DataContext.Entry(user).Collection(u => u.UserFriends).Load();
+                    DataContext.Entry(user).Collection(u => u.FriendRequestNotifications).Load();
                     DataContext.Entry(user).Collection(u => u.UserPosts).Load();
                     foreach (var userPost in user.UserPosts)
                     {
@@ -158,7 +161,7 @@ using FeedleDataTier.Models;
             DataContext.SaveChanges();
             UserConversation forCreator = new UserConversation();
             UserConversation forParticipant = new UserConversation();
-            
+
             forCreator.Conversation = newlyAdded.Entity;
             forParticipant.Conversation = newlyAdded.Entity;
 
@@ -170,18 +173,18 @@ using FeedleDataTier.Models;
 
             forParticipant.WithWhomId = creatorId;
             forParticipant.UserId = withWhomId;
-            
+
 
             EntityEntry<UserConversation> uc = DataContext.UserConversations.Add(forCreator);
             EntityEntry<UserConversation> uc2 = DataContext.UserConversations.Add(forParticipant);
             DataContext.SaveChanges();
-            
+
             List<UserConversation> userConversations = new List<UserConversation>();
-            
+
             userConversations.Add(uc.Entity);
             userConversations.Add(uc2.Entity);
 
-            
+
             return userConversations;
         }
 
@@ -201,7 +204,8 @@ using FeedleDataTier.Models;
         public FriendRequestNotification MakeFriendRequestNotification(
             FriendRequestNotification friendRequestNotification)
         {
-            EntityEntry<FriendRequestNotification> newlyAdded = DataContext.FriendRequestNotifications.Add(friendRequestNotification);
+            EntityEntry<FriendRequestNotification> newlyAdded =
+                DataContext.FriendRequestNotifications.Add(friendRequestNotification);
             Console.WriteLine(newlyAdded.Entity.FriendRequestId);
             DataContext.SaveChanges();
             Console.WriteLine(newlyAdded.Entity.FriendRequestId);
@@ -211,39 +215,41 @@ using FeedleDataTier.Models;
         public List<UserFriend> RespondToFriendRequest(bool status, FriendRequestNotification friendRequestNotification)
         {
             var toRemove = DataContext.FriendRequestNotifications.FirstOrDefault(f =>
-                    f.FriendRequestId == friendRequestNotification.FriendRequestId);
+                f.FriendRequestId == friendRequestNotification.FriendRequestId);
             var echoToRemove = DataContext.FriendRequestNotifications.FirstOrDefault(f =>
                 f.CreatorId == friendRequestNotification.CreatorId &&
                 f.UserId == friendRequestNotification.PotentialFriendUserId);
             List<UserFriend> userFriends = new List<UserFriend>();
-                if (toRemove != null && echoToRemove != null)
+            if (toRemove != null && echoToRemove != null)
+            {
+                DataContext.FriendRequestNotifications.Remove(toRemove);
+                DataContext.FriendRequestNotifications.Remove(echoToRemove);
+                if (status)
                 {
-                    DataContext.FriendRequestNotifications.Remove(toRemove);
-                    DataContext.FriendRequestNotifications.Remove(echoToRemove);
-                    if (status)
-                    {
-                        UserFriend userFriendForCreator = new UserFriend();
-                        UserFriend userFriendForParticipant = new UserFriend();
-                        userFriendForCreator.FriendId = friendRequestNotification.PotentialFriendUserId;
-                        userFriendForCreator.UserId = friendRequestNotification.UserId;
+                    UserFriend userFriendForCreator = new UserFriend();
+                    UserFriend userFriendForParticipant = new UserFriend();
+                    userFriendForCreator.FriendId = friendRequestNotification.PotentialFriendUserId;
+                    userFriendForCreator.UserId = friendRequestNotification.UserId;
 
-                        userFriendForParticipant.FriendId = friendRequestNotification.UserId;
-                        userFriendForParticipant.UserId = friendRequestNotification.PotentialFriendUserId;
+                    userFriendForParticipant.FriendId = friendRequestNotification.UserId;
+                    userFriendForParticipant.UserId = friendRequestNotification.PotentialFriendUserId;
 
-                        EntityEntry<UserFriend> userFriendCreator = DataContext.UserFriends.Add(userFriendForCreator);
-                        EntityEntry<UserFriend> userFriendPart = DataContext.UserFriends.Add(userFriendForParticipant);
-                        
-                        DataContext.SaveChanges();
-                        
-                        userFriends.Add(userFriendCreator.Entity);
-                        userFriends.Add(userFriendPart.Entity);
+                    EntityEntry<UserFriend> userFriendCreator = DataContext.UserFriends.Add(userFriendForCreator);
+                    EntityEntry<UserFriend> userFriendPart = DataContext.UserFriends.Add(userFriendForParticipant);
 
-                        return userFriends;
-                    }
                     DataContext.SaveChanges();
-                }  
-                return null;
-           
+
+                    userFriends.Add(userFriendCreator.Entity);
+                    userFriends.Add(userFriendPart.Entity);
+
+                    return userFriends;
+                }
+
+                DataContext.SaveChanges();
+            }
+
+            return null;
+
         }
 
         public UserSubscription SubscribeToUser(UserSubscription userSubscription)
@@ -256,7 +262,7 @@ using FeedleDataTier.Models;
         public int UnsubscribeFromUser(int subscriptionId)
         {
             Console.WriteLine(subscriptionId);
-            var toRemove = DataContext.UserSubscriptions.FirstOrDefault(u=>u.SubscriptionId == subscriptionId);
+            var toRemove = DataContext.UserSubscriptions.FirstOrDefault(u => u.SubscriptionId == subscriptionId);
             Console.WriteLine(toRemove);
             if (toRemove != null)
             {
@@ -266,6 +272,65 @@ using FeedleDataTier.Models;
             }
 
             return -1;
+        }
+
+        public int DeleteFriend(int userFriendId)
+        {
+            var toRemove = DataContext.UserFriends.FirstOrDefault(uf => uf.UserFriendId == userFriendId);
+            var toRemoveSecond = DataContext.UserFriends.FirstOrDefault(uf =>
+                uf.UserId == toRemove.FriendId && uf.FriendId == toRemove.UserId);
+            if (toRemove != null && toRemoveSecond != null)
+            {
+                DataContext.UserFriends.Remove(toRemove);
+                DataContext.UserFriends.Remove(toRemoveSecond);
+                DataContext.SaveChanges();
+                return toRemove.UserFriendId;
+            }
+
+            return -1;
+        }
+
+        public int DeleteReaction(int postReactionId)
+        {
+            var toRemove =
+                DataContext.PostReactions.FirstOrDefault(reaction => reaction.PostReactionId == postReactionId);
+            if (toRemove != null)
+            {
+                DataContext.PostReactions.Remove(toRemove);
+                DataContext.SaveChanges();
+                return toRemove.PostReactionId;
+            }
+
+            return -1;
+        }
+
+        public PostReaction MakePostReaction(PostReaction postReaction)
+        {
+            EntityEntry<PostReaction> newlyAdded = DataContext.PostReactions.Add(postReaction);
+            return newlyAdded.Entity;
+        }
+
+        public PostReaction UpdatePostReaction(PostReaction postReaction)
+        {
+            bool tracking = DataContext.ChangeTracker.Entries<PostReaction>()
+                .Any(x => x.Entity.PostReactionId == postReaction.PostReactionId);
+            if (!tracking)
+            {
+                EntityEntry<PostReaction> updated = DataContext.Update(postReaction);
+                DataContext.SaveChanges();
+                return updated.Entity;
+            }
+
+            var reactionToUpdate =
+                DataContext.PostReactions.FirstOrDefault(p => p.PostReactionId == postReaction.PostReactionId);
+            if (reactionToUpdate != null)
+            {
+                reactionToUpdate.Status = postReaction.Status;
+                DataContext.SaveChanges();
+                return reactionToUpdate;
+            }
+
+            return null;
         }
     }
 }

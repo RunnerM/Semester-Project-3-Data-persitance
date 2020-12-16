@@ -246,7 +246,6 @@ using System.Net.Sockets;
                         break;
                     case RequestType.UnsubscribeRequest:
                         UnsubscribeRequest unsubscribeRequest = JsonSerializer.Deserialize<UnsubscribeRequest>(message);
-                        Console.WriteLine(unsubscribeRequest.SubscriptionId);
                         int unSubIndex = DbPersistence.UnsubscribeFromUser(unsubscribeRequest.SubscriptionId);
                         string responseUnsubscribe = 
                             JsonSerializer.Serialize(new UnsubscribeRequest(unSubIndex));
@@ -255,6 +254,57 @@ using System.Net.Sockets;
                         byte[] toSendLenBytesUnsubscribe = BitConverter.GetBytes(toSendUnSub);
                         client.Send(toSendLenBytesUnsubscribe);
                         client.Send(toSendBytesUnsubscribe);
+                        break;
+                    case RequestType.DeleteFriendRequest:
+                        DeleteFriendRequest deleteFriendRequest =
+                            JsonSerializer.Deserialize<DeleteFriendRequest>(message);
+                        int deleteFriendIndex = DbPersistence.DeleteFriend(deleteFriendRequest.UserFriendId);
+                        string responseDeleteFriend =
+                            JsonSerializer.Serialize(new DeleteFriendRequest(deleteFriendIndex));
+                        int toSendDeleteFriend = Encoding.ASCII.GetByteCount(responseDeleteFriend);
+                        byte[] toSendBytesDeleteFriendRequest = Encoding.ASCII.GetBytes(responseDeleteFriend);
+                        byte[] toSendBytesLenDeleteFriendRequest = BitConverter.GetBytes(toSendDeleteFriend);
+                        client.Send(toSendBytesLenDeleteFriendRequest);
+                        client.Send(toSendBytesDeleteFriendRequest);
+                        break;
+                    case RequestType.MakeReactionRequest:
+                        MakeReactionRequest makeReactionRequest =
+                            JsonSerializer.Deserialize<MakeReactionRequest>(message);
+                        PostReaction postReactionResult =
+                            DbPersistence.MakePostReaction(makeReactionRequest.PostReaction);
+                        string responseMakePostReaction =
+                            JsonSerializer.Serialize(new MakeReactionRequest(postReactionResult));
+                        int toSendMakePostReaction = Encoding.ASCII.GetByteCount(responseMakePostReaction);
+                        byte[] toSendBytesMakePostReaction = Encoding.ASCII.GetBytes(responseMakePostReaction);
+                        byte[] toSendBytesLenMakePostReaction = BitConverter.GetBytes(toSendMakePostReaction);
+                        client.Send(toSendBytesLenMakePostReaction);
+                        client.Send(toSendBytesMakePostReaction);
+                        break;
+                    case RequestType.DeleteReactionRequest:
+                        DeleteReactionRequest deleteReactionRequest =
+                            JsonSerializer.Deserialize<DeleteReactionRequest>(message);
+                        int deleteReactionResult =
+                            DbPersistence.DeleteReaction(deleteReactionRequest.PostReactionId);
+                        string responseDeletePostReaction =
+                            JsonSerializer.Serialize(new DeleteReactionRequest(deleteReactionResult));
+                        int toSendDeletePostReaction = Encoding.ASCII.GetByteCount(responseDeletePostReaction);
+                        byte[] toSendBytesMakeDeleteReaction = Encoding.ASCII.GetBytes(responseDeletePostReaction);
+                        byte[] toSendBytesLenMakeDeleteReaction = BitConverter.GetBytes(toSendDeletePostReaction);
+                        client.Send(toSendBytesLenMakeDeleteReaction);
+                        client.Send(toSendBytesMakeDeleteReaction);
+                        break;
+                    case RequestType.UpdateReactionRequest:
+                        UpdateReactionRequest updateReactionRequest =
+                            JsonSerializer.Deserialize<UpdateReactionRequest>(message);
+                        PostReaction postReactionResultFromUpdating =
+                            DbPersistence.UpdatePostReaction(updateReactionRequest.PostReaction);
+                        string updateReactionResponse =
+                            JsonSerializer.Serialize(new UpdateReactionRequest(postReactionResultFromUpdating));
+                        int toSendUpdateBytes = Encoding.ASCII.GetByteCount(updateReactionResponse);
+                        byte[] toSendBytesMakeUpdateReaction = Encoding.ASCII.GetBytes(updateReactionResponse);
+                        byte[] toSendLenBytesMakeUpdateReaction = BitConverter.GetBytes(toSendUpdateBytes);
+                        client.Send(toSendLenBytesMakeUpdateReaction);
+                        client.Send(toSendBytesMakeUpdateReaction);
                         break;
                 }
                 

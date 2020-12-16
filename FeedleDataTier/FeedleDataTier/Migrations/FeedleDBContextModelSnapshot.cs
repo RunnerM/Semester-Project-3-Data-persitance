@@ -171,9 +171,6 @@ namespace FeedleDataTier.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Approvals")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("AuthorUserName")
                         .HasColumnType("TEXT");
 
@@ -181,9 +178,6 @@ namespace FeedleDataTier.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Day")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Disapprovals")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Hour")
@@ -215,6 +209,30 @@ namespace FeedleDataTier.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Posts");
+                });
+
+            modelBuilder.Entity("FeedleDataTier.Models.PostReaction", b =>
+                {
+                    b.Property<int>("PostReactionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PostId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("PostReactionId");
+
+                    b.HasIndex("PostId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("PostReactions");
                 });
 
             modelBuilder.Entity("FeedleDataTier.Models.User", b =>
@@ -328,6 +346,21 @@ namespace FeedleDataTier.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("FeedleDataTier.Models.PostReaction", b =>
+                {
+                    b.HasOne("FeedleDataTier.Models.Post", null)
+                        .WithMany("PostReactions")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FeedleDataTier.Models.User", null)
+                        .WithMany("PostReactions")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("FeedleDataTier.Models.UserConversation", b =>
                 {
                     b.HasOne("FeedleDataTier.Models.Conversation", "Conversation")
@@ -366,11 +399,15 @@ namespace FeedleDataTier.Migrations
             modelBuilder.Entity("FeedleDataTier.Models.Post", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("PostReactions");
                 });
 
             modelBuilder.Entity("FeedleDataTier.Models.User", b =>
                 {
                     b.Navigation("FriendRequestNotifications");
+
+                    b.Navigation("PostReactions");
 
                     b.Navigation("UserConversations");
 

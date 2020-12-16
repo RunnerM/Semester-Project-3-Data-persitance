@@ -32,10 +32,12 @@
         // public byte[] images;
         [JsonPropertyName("comments")]
         public List<Comment> Comments { get; set; }
-        [JsonPropertyName("approvals")] public int Approvals { get; set; }
-        [JsonPropertyName("disapprovals")] public int Disapprovals { get; set; }
+        
         [JsonPropertyName("postImageSrc")]
         public string PostImageSrc { get; set; }
+
+        [JsonPropertyName("postReactions")]
+        public List<PostReaction> PostReactions { get; set; }
 
         public Post()
         {

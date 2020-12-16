@@ -31,6 +31,9 @@ using System.ComponentModel.DataAnnotations;
         
         [JsonPropertyName("userImageSrc")]
         public string UserImageSrc { get; set; }
-        
+
+        [JsonIgnore]
+        public List<PostReaction> PostReactions { get; set; }
+
     }
 }

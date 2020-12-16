@@ -35,5 +35,13 @@
 
         int UnsubscribeFromUser(int subscriptionId);
 
+        int DeleteFriend(int userFriendId);
+
+        PostReaction MakePostReaction(PostReaction postReaction);
+
+        PostReaction UpdatePostReaction(PostReaction postReaction);
+
+        int DeleteReaction(int postReactionId);
+
     }
 }
