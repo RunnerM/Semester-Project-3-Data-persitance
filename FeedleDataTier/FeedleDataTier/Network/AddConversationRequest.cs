@@ -12,11 +12,11 @@ namespace FeedleDataTier.Network
         [JsonPropertyName("withWhomId")]
         public int WithWhomId { get; set; }
 
-        public AddConversationRequest(Conversation conversation, int creatorId, int withWhom) : base(RequestType.AddConversation)
+        public AddConversationRequest(Conversation conversation, int creatorId, int withWhomId) : base(RequestType.AddConversation)
         {
             Conversation = conversation;
             CreatorId = creatorId;
-            WithWhomId = withWhom;
+            WithWhomId = withWhomId;
         }
         
     }

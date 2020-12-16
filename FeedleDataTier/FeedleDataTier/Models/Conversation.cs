@@ -13,7 +13,7 @@ using System.ComponentModel.DataAnnotations;
         public string Title { get; set; }
         [JsonPropertyName("messages")]
         public List<Message> Messages { get; set; }
-        [JsonPropertyName("userConversations")]
+        [JsonIgnore]
         public List<UserConversation> UserConversations { get; set; }
         
     }
