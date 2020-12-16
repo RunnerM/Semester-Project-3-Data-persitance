@@ -17,12 +17,10 @@
           <e p="FeedleDBContext.cs" t="Include" />
         </e>
         <e p="Feedle.db" t="Include" />
-        <e p="Feedle.db-shm" t="Include" />
-        <e p="Feedle.db-wal" t="Include" />
         <e p="FeedleDataTier.csproj" t="IncludeRecursive" />
         <e p="Migrations" t="Include">
-          <e p="20201214213218_InitialCreate.cs" t="Include" />
-          <e p="20201214213218_InitialCreate.Designer.cs" t="Include" />
+          <e p="20201216102619_InitialCreate.cs" t="Include" />
+          <e p="20201216102619_InitialCreate.Designer.cs" t="Include" />
           <e p="FeedleDBContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

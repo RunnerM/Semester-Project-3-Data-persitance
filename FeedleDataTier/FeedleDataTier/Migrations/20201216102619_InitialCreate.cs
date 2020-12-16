@@ -28,7 +28,8 @@ namespace FeedleDataTier.Migrations
                     UserName = table.Column<string>(type: "TEXT", nullable: true),
                     Password = table.Column<string>(type: "TEXT", nullable: true),
                     DisplayedUserName = table.Column<string>(type: "TEXT", nullable: true),
-                    SecurityLevel = table.Column<int>(type: "INTEGER", nullable: false)
+                    SecurityLevel = table.Column<int>(type: "INTEGER", nullable: false),
+                    UserImageSrc = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -103,7 +104,8 @@ namespace FeedleDataTier.Migrations
                     Minute = table.Column<int>(type: "INTEGER", nullable: false),
                     Second = table.Column<int>(type: "INTEGER", nullable: false),
                     Approvals = table.Column<int>(type: "INTEGER", nullable: false),
-                    Disapprovals = table.Column<int>(type: "INTEGER", nullable: false)
+                    Disapprovals = table.Column<int>(type: "INTEGER", nullable: false),
+                    PostImageSrc = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

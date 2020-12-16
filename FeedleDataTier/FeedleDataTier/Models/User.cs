@@ -29,5 +29,8 @@ using System.ComponentModel.DataAnnotations;
         [JsonPropertyName("friendRequestNotifications")]
         public List<FriendRequestNotification> FriendRequestNotifications { get; set; }
         
+        [JsonPropertyName("userImageSrc")]
+        public string UserImageSrc { get; set; }
+        
     }
 }

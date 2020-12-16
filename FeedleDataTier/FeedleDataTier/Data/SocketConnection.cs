@@ -225,7 +225,6 @@ using System.Net.Sockets;
                     case RequestType.RespondToFriendRequest:
                         RespondToFriendRequest respondToFriendRequest= JsonSerializer.Deserialize<RespondToFriendRequest>(message);
                         List<UserFriend> userFriends = DbPersistence.RespondToFriendRequest(respondToFriendRequest.RespondStatus,respondToFriendRequest.FriendRequestNotification);
-                        Console.WriteLine(userFriends.Count);
                         string responseToFriendResponse = 
                             JsonSerializer.Serialize(new RespondToFriendResponse(userFriends));
                         int toSendRespondFriend = Encoding.ASCII.GetByteCount(responseToFriendResponse);

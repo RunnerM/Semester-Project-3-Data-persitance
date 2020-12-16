@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FeedleDataTier.Migrations
 {
     [DbContext(typeof(FeedleDBContext))]
-    [Migration("20201214213218_InitialCreate")]
+    [Migration("20201216102619_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -197,6 +197,9 @@ namespace FeedleDataTier.Migrations
                     b.Property<int>("Month")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("PostImageSrc")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("Second")
                         .HasColumnType("INTEGER");
 
@@ -230,6 +233,9 @@ namespace FeedleDataTier.Migrations
 
                     b.Property<int>("SecurityLevel")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserImageSrc")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("UserName")
                         .HasColumnType("TEXT");

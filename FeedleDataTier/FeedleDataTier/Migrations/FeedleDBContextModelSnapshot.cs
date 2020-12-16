@@ -195,6 +195,9 @@ namespace FeedleDataTier.Migrations
                     b.Property<int>("Month")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("PostImageSrc")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("Second")
                         .HasColumnType("INTEGER");
 
@@ -228,6 +231,9 @@ namespace FeedleDataTier.Migrations
 
                     b.Property<int>("SecurityLevel")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserImageSrc")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("UserName")
                         .HasColumnType("TEXT");
