@@ -10,7 +10,7 @@
         public int MessageId { get; set; }
         [JsonPropertyName("content")]
         public string Content { get; set; }
-        [JsonPropertyName("AuthorId")]
+        [JsonPropertyName("UserId")]
         public int UserId { get; set; }
         [JsonPropertyName("day")]
         public int Day { get; set; }

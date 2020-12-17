@@ -231,9 +231,11 @@ using FeedleDataTier.Models;
                     UserFriend userFriendForParticipant = new UserFriend();
                     userFriendForCreator.FriendId = friendRequestNotification.PotentialFriendUserId;
                     userFriendForCreator.UserId = friendRequestNotification.UserId;
+                    userFriendForCreator.UserName = friendRequestNotification.CreatorUserName;
 
                     userFriendForParticipant.FriendId = friendRequestNotification.UserId;
                     userFriendForParticipant.UserId = friendRequestNotification.PotentialFriendUserId;
+                    userFriendForParticipant.UserName = friendRequestNotification.PotentialFriendUserName;
 
                     EntityEntry<UserFriend> userFriendCreator = DataContext.UserFriends.Add(userFriendForCreator);
                     EntityEntry<UserFriend> userFriendPart = DataContext.UserFriends.Add(userFriendForParticipant);
@@ -308,6 +310,7 @@ using FeedleDataTier.Models;
         public PostReaction MakePostReaction(PostReaction postReaction)
         {
             EntityEntry<PostReaction> newlyAdded = DataContext.PostReactions.Add(postReaction);
+            DataContext.SaveChanges();
             return newlyAdded.Entity;
         }
 

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FeedleDataTier.Migrations
 {
     [DbContext(typeof(FeedleDBContext))]
-    [Migration("20201216233027_InitialCreate")]
+    [Migration("20201217085226_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

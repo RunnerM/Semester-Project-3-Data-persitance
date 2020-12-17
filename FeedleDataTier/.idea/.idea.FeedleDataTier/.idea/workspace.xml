@@ -23,11 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99ca3e0d-8e77-48e3-a9bd-283121164c9a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FeedleDataTier/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Feedle.db" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Feedle.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/Feedle.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Feedle.db-wal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Migrations/20201216233027_InitialCreate.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Migrations/20201216233027_InitialCreate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedleDataTier/Models/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/Models/Message.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/bin/Debug/netcoreapp3.1/FeedleDataTier.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.dll" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/FeedleDataTier/obj/Debug/netcoreapp3.1/FeedleDataTier.pdb" afterDir="false" />
     </list>
@@ -61,7 +67,6 @@
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/DeleteUserRequest.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/SendMessageRequest.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/AddCommentRequest.cs" />
-        <option value="$PROJECT_DIR$/FeedleDataTier/Models/Message.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserInformation.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserSubcription.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/SimpleTextNotification.cs" />
@@ -87,7 +92,6 @@
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/AddConversationRequest.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/Conversation.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/UserConversation.cs" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e102bbce-e201-4e87-9f49-34ebbd27f695/console.sql" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/Post.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/User.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Network/RequestType.cs" />
@@ -99,6 +103,8 @@
         <option value="$PROJECT_DIR$/FeedleDataTier/DataAccess/FeedleDBContext.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Data/SocketConnection.cs" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Models/PostReaction.cs" />
+        <option value="$PROJECT_DIR$/FeedleDataTier/Models/Message.cs" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e102bbce-e201-4e87-9f49-34ebbd27f695/console.sql" />
         <option value="$PROJECT_DIR$/FeedleDataTier/Data/DataBasePersistence.cs" />
       </list>
     </option>
@@ -167,7 +173,8 @@
       <workItem from="1607934899545" duration="8986000" />
       <workItem from="1607975809341" duration="25423000" />
       <workItem from="1608112208021" duration="13846000" />
-      <workItem from="1608147653918" duration="11257000" />
+      <workItem from="1608147653918" duration="11907000" />
+      <workItem from="1608194959479" duration="6883000" />
     </task>
     <servers />
   </component>
@@ -196,26 +203,26 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="617" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1607281758022" />
-    <state width="2005" height="208" key="GridCell.Tab.0.bottom" timestamp="1608170040973">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1478" height="301" key="GridCell.Tab.0.bottom" timestamp="1608212767574">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608134868345" />
-    <state width="2005" height="208" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1608170040973" />
-    <state width="2005" height="208" key="GridCell.Tab.0.center" timestamp="1608170040973">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1478" height="301" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608212767574" />
+    <state width="1787" height="518" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1608172222529" />
+    <state width="1478" height="301" key="GridCell.Tab.0.center" timestamp="1608212767574">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608134868345" />
-    <state width="2005" height="208" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1608170040973" />
-    <state width="2005" height="208" key="GridCell.Tab.0.left" timestamp="1608170040973">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1478" height="301" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608212767574" />
+    <state width="1787" height="518" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1608172222529" />
+    <state width="1478" height="301" key="GridCell.Tab.0.left" timestamp="1608212767574">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608134868345" />
-    <state width="2005" height="208" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1608170040973" />
-    <state width="2005" height="208" key="GridCell.Tab.0.right" timestamp="1608170040973">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1478" height="301" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608212767574" />
+    <state width="1787" height="518" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1608172222529" />
+    <state width="1478" height="301" key="GridCell.Tab.0.right" timestamp="1608212767574">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608134868345" />
-    <state width="2005" height="208" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1608170040973" />
+    <state width="1478" height="301" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608212767574" />
+    <state width="1787" height="518" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1608172222529" />
     <state width="2005" height="402" key="GridCell.Tab.1.bottom" timestamp="1607465503220">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
