@@ -81,6 +81,7 @@ using FeedleDataTier.Models;
                 foreach (var post in posts)
                 {
                     DataContext.Entry(post).Collection(p => p.Comments).Load();
+                    DataContext.Entry(post).Collection(p => p.PostReactions).Load();
                 }
 
                 return posts;
